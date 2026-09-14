@@ -2,16 +2,18 @@
   {
     "id": "M1",
     "tipo": "Muro",
-    "oficina": "NUCLEO COMUN (ascensores/escalera)",
+    "oficina": "OF501",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": null
   },
   {
     "id": "M2",
     "tipo": "Muro",
-    "oficina": "NUCLEO COMUN (ascensores/escalera)",
+    "oficina": "OF501",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": null
   },
   {
     "id": "M3",
@@ -32,16 +34,16 @@
   {
     "id": "M5",
     "tipo": "Muro",
-    "oficina": "OF502",
-    "secundaria": "OF501",
+    "oficina": "OF501",
+    "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false
   },
   {
     "id": "M6",
     "tipo": "Muro",
-    "oficina": "OF502",
-    "secundaria": "OF501",
+    "oficina": "OF501",
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -49,7 +51,7 @@
     "id": "M7",
     "tipo": "Muro",
     "oficina": "OF501",
-    "secundaria": null,
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -80,7 +82,8 @@
     "tipo": "Muro",
     "oficina": "OF501",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": "OF502"
   },
   {
     "id": "M12",
@@ -127,9 +130,10 @@
   {
     "id": "M18",
     "tipo": "Muro",
-    "oficina": "OF502",
+    "oficina": "OF501",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": null
   },
   {
     "id": "M19",
@@ -268,8 +272,8 @@
   {
     "id": "M37",
     "tipo": "Muro",
-    "oficina": "NUCLEO COMUN (ascensores/escalera)",
-    "secundaria": null,
+    "oficina": "OF504",
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -305,7 +309,7 @@
     "id": "M42",
     "tipo": "Muro",
     "oficina": "OF504",
-    "secundaria": "OF505",
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -313,7 +317,7 @@
     "id": "M43",
     "tipo": "Muro",
     "oficina": "OF505",
-    "secundaria": "OF504",
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -329,7 +333,8 @@
     "tipo": "Muro",
     "oficina": "OF505",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": "PASILLO"
   },
   {
     "id": "M46",
@@ -343,7 +348,8 @@
     "tipo": "Muro",
     "oficina": "OF505",
     "altura_fija": 2.423,
-    "punto_fijo": false
+    "punto_fijo": false,
+    "secundaria": "PASILLO"
   },
   {
     "id": "M48",
@@ -415,7 +421,7 @@
     "id": "M57",
     "tipo": "Muro",
     "oficina": "OF506",
-    "secundaria": "OF505",
+    "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false
   },
@@ -443,7 +449,7 @@
   {
     "id": "M61",
     "tipo": "Muro",
-    "oficina": "NUCLEO COMUN (ascensores/escalera)",
+    "oficina": "PASILLO",
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false
@@ -479,7 +485,7 @@
   {
     "id": "M66",
     "tipo": "Muro",
-    "oficina": "NUCLEO COMUN (ascensores/escalera)",
+    "oficina": "PASILLO",
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false

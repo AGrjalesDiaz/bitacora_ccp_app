@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
+const multer = require('multer');
+const sharp = require('sharp');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,17 @@ const persistentBase = fs.existsSync('/uploads') ? '/uploads' : __dirname;
 const dataDir = path.join(persistentBase, 'data-json');
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 console.log(`✓ Guardando hallazgos en: ${dataDir}`);
+
+// Carpeta de fotos — también en el disco persistente para que sobrevivan a cada redeploy
+const fotosDir = path.join(persistentBase, 'fotos');
+if (!fs.existsSync(fotosDir)) fs.mkdirSync(fotosDir, { recursive: true });
+console.log(`✓ Guardando fotos en: ${fotosDir}`);
+app.use('/fotos', express.static(fotosDir));
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 15 * 1024 * 1024 } // 15MB por foto antes de comprimir
+});
 
 // Rutas de archivos de datos
 const hallazgosFile = path.join(dataDir, 'hallazgos.json');
@@ -109,11 +122,24 @@ app.post('/api/hallazgos', (req, res) => {
   res.json({ piso_real: doc.piso_real, codigo_elemento: doc.codigo_elemento, fecha: doc.fecha });
 });
 
-// POST /api/upload-photo — stub (versión lite sin compresión)
-app.post('/api/upload-photo', (req, res) => {
-  // Versión lite: simular URL de foto sin subirla realmente
-  const photoUrl = `/uploads/photo_${Date.now()}.jpg`;
-  res.json({ url: photoUrl });
+// POST /api/upload-photo — guarda la foto de verdad (comprimida) en el disco persistente
+app.post('/api/upload-photo', upload.single('photo'), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No se recibió ninguna foto' });
+  }
+  try {
+    const filename = `photo_${Date.now()}_${Math.random().toString(36).slice(2, 8)}.jpg`;
+    const destPath = path.join(fotosDir, filename);
+    await sharp(req.file.buffer)
+      .rotate() // corrige la orientación según los datos EXIF del celular
+      .resize({ width: 1600, withoutEnlargement: true })
+      .jpeg({ quality: 78 })
+      .toFile(destPath);
+    res.json({ url: `/fotos/${filename}` });
+  } catch (err) {
+    console.error('Error guardando foto:', err.message);
+    res.status(500).json({ error: 'No se pudo guardar la foto: ' + err.message });
+  }
 });
 
 app.get('/api/export/sabana', (req, res) => {
