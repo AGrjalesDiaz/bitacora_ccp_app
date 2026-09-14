@@ -205,13 +205,12 @@ function renderCaptura() {
   return html;
 }
 
-function fotosField(h) {
+function fotosField(h, elId) {
   const fotos = (h && h.fotos) || [];
-  const uid_val = h ? h.piso_real + "_" + h.codigo_elemento : 'new';
   return `<div><label style="font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase">Fotos (máx. 3)</label>
     <div class="file-input-wrapper">
-      <label class="file-label" for="fotoInput_${uid_val}">Seleccionar fotos</label>
-      <input type="file" accept="image/*" capture="environment" multiple id="fotoInput_${uid_val}">
+      <label class="file-label" for="fotoInput_${elId}">Seleccionar fotos</label>
+      <input type="file" accept="image/*" capture="environment" multiple id="fotoInput_${elId}">
     </div>
     <div class="thumbs" id="fotoThumbs">${fotos.map(f => `<img src="${f}">`).join("")}</div>
   </div>`;
@@ -290,7 +289,7 @@ function formularioElemento(el, h) {
   }
   return `<div class="panel" id="panel_${el.id}">
     ${body}
-    ${fotosField(h)}
+    ${fotosField(h, el.id)}
     <div class="row" style="margin-top:10px">
       <button class="btn primary" data-guardar="${el.id}">Guardar</button>
       <button class="btn" data-cerrar="1">Cancelar</button>
