@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instalar dependencias
-RUN npm ci --only=production && npm install sqlite3
+RUN npm install --omit=dev
 
 # Copiar resto de la app
 COPY . .
