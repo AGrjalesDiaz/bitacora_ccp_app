@@ -135,10 +135,21 @@ app.post('/api/upload-photo', upload.single('photo'), async (req, res) => {
       .resize({ width: 1600, withoutEnlargement: true })
       .jpeg({ quality: 78 })
       .toFile(destPath);
-    res.json({ url: `/fotos/${filename}` });
+    return res.json({ url: `/fotos/${filename}` });
   } catch (err) {
-    console.error('Error guardando foto:', err.message);
-    res.status(500).json({ error: 'No se pudo guardar la foto: ' + err.message });
+    console.error('No se pudo comprimir la foto, se guarda tal cual llegó:', err.message);
+    // Respaldo: si sharp no puede procesar el formato exacto que mandó el celular
+    // (por ejemplo HEIC de iPhone), guardamos el archivo original sin comprimir
+    // en vez de perder la foto por completo.
+    try {
+      const extOriginal = (req.file.originalname && path.extname(req.file.originalname)) || '.jpg';
+      const rawName = `photo_${Date.now()}_${Math.random().toString(36).slice(2, 8)}${extOriginal || '.jpg'}`;
+      fs.writeFileSync(path.join(fotosDir, rawName), req.file.buffer);
+      return res.json({ url: `/fotos/${rawName}` });
+    } catch (err2) {
+      console.error('Error guardando foto (respaldo también falló):', err2.message);
+      return res.status(500).json({ error: 'No se pudo guardar la foto: ' + err2.message });
+    }
   }
 });
 

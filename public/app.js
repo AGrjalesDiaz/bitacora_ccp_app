@@ -516,9 +516,11 @@ async function onGuardar(elId) {
         const formData = new FormData();
         formData.append('photo', file);
         const res = await fetch('/api/upload-photo', { method: 'POST', body: formData });
-        const data = await res.json();
-        if (data.url) {
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.url) {
           doc.fotos.push(data.url);
+        } else {
+          toast('Error subiendo foto: ' + (data.error || ('HTTP ' + res.status)));
         }
       } catch (err) {
         toast('Error subiendo foto: ' + err.message);
