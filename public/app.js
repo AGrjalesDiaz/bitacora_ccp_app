@@ -43,11 +43,25 @@ try {
 
 // Utilidades
 function uid() { return "h_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8); }
-function codigoEspacio() { return "P" + state.piso + "-" + state.oficina; }
+// Número de oficina física (1-6) a partir del código interno de catálogo OF501..OF506
+function numeroOficina(o) {
+  const m = /^OF50(\d)$/.exec(o);
+  return m ? m[1] : null;
+}
+// Código de espacio que usan los técnicos en el edificio: 1501-1506 (piso 15), 1601-1606 (piso 16)
+function codigoEspacio() {
+  const n = numeroOficina(state.oficina);
+  if (n) return state.piso + "0" + n;
+  if (state.oficina === "NUCLEO COMUN (ascensores/escalera)") return "NC" + state.piso;
+  if (state.oficina === "PUNTO FIJO") return "PF" + state.piso;
+  return "P" + state.piso + "-" + state.oficina;
+}
 function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
 function esc(s) { return (s == null ? "" : String(s)).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
-function ofLabel(o) {
+function ofLabel(o, piso) {
+  const n = numeroOficina(o);
+  if (n) return "Oficina " + (piso || state.piso) + "0" + n;
   if (o === "NUCLEO COMUN (ascensores/escalera)") return "Núcleo común (ascensores/escalera)";
   if (o === "PUNTO FIJO") return "Punto fijo (pendiente de levantamiento)";
   return o;
@@ -165,7 +179,7 @@ function selectorPisoOficina() {
       <select id="selPiso"><option value="15" ${state.piso === "15" ? "selected" : ""}>Piso 15</option><option value="16" ${state.piso === "16" ? "selected" : ""}>Piso 16</option></select>
     </div>
     <div class="field"><label>Oficina / Zona</label>
-      <select id="selOficina">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o))}</option>`).join("")}</select>
+      <select id="selOficina">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
     </div>
   </div></div>`;
 }
@@ -349,7 +363,7 @@ function renderFicha() {
       <select id="selPisoF"><option value="15" ${state.piso === "15" ? "selected" : ""}>Piso 15</option><option value="16" ${state.piso === "16" ? "selected" : ""}>Piso 16</option></select>
     </div>
     <div class="field"><label>Oficina</label>
-      <select id="selOficinaF">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o))}</option>`).join("")}</select>
+      <select id="selOficinaF">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
     </div>
   </div></div>`;
   const cod = codigoEspacio();
