@@ -13,8 +13,12 @@ app.use(express.urlencoded({ limit: '50mb' }));
 app.use(express.static('public'));
 
 // Directorios
-const dataDir = path.join(__dirname, 'data-json');
+// En Render, el disco persistente queda montado en /uploads (sobrevive a cada redeploy).
+// En el computador local (npm run dev) esa carpeta no existe, así que se usa la carpeta del proyecto como antes.
+const persistentBase = fs.existsSync('/uploads') ? '/uploads' : __dirname;
+const dataDir = path.join(persistentBase, 'data-json');
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+console.log(`✓ Guardando hallazgos en: ${dataDir}`);
 
 // Rutas de archivos de datos
 const hallazgosFile = path.join(dataDir, 'hallazgos.json');
