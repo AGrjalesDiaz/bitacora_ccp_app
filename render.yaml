@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bitacora-ccp-app
+    runtime: node
+    buildCommand: npm ci && npm run seed
+    startCommand: npm start
+    plan: standard
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+    disk:
+      name: app-storage
+      mountPath: /app/uploads
+      sizeGB: 10
