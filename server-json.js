@@ -37,16 +37,30 @@ const upload = multer({
 const hallazgosFile = path.join(dataDir, 'hallazgos.json');
 const configFile = path.join(dataDir, 'config.json');
 
-// Cargar catálogo
-let catalogo = [];
+// Cargar catálogos
+// "tipo2" = planta tipo pisos 15-16 (catalogo original, sin cambios).
+// "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo nuevo, digitalizado por el ingeniero).
+let catalogos = { tipo2: [], bajos: [] };
 try {
   const rawData = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_planta_tipo2.json'), 'utf-8');
-  catalogo = JSON.parse(rawData);
-  console.log(`✓ Catálogo cargado: ${catalogo.length} elementos`);
+  catalogos.tipo2 = JSON.parse(rawData);
+  console.log(`✓ Catálogo tipo2 (pisos 15-16) cargado: ${catalogos.tipo2.length} elementos`);
 } catch (err) {
-  console.error('Error cargando catálogo:', err.message);
+  console.error('Error cargando catálogo tipo2:', err.message);
   process.exit(1);
 }
+try {
+  const rawBajos = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_pisos_6_7_8_10_11_13_14.json'), 'utf-8');
+  const parsedBajos = JSON.parse(rawBajos);
+  catalogos.bajos = Array.isArray(parsedBajos) ? parsedBajos : (parsedBajos.elementos || []);
+  console.log(`✓ Catálogo bajos (pisos 6,7,8,10,11,13,14) cargado: ${catalogos.bajos.length} elementos`);
+} catch (err) {
+  console.error('Advertencia: no se pudo cargar el catálogo de pisos bajos:', err.message);
+  catalogos.bajos = [];
+}
+
+// Se mantiene 'catalogo' (tipo2) por compatibilidad con cualquier uso previo del nombre.
+let catalogo = catalogos.tipo2;
 
 // Funciones de carga/guardado de datos
 function loadData(file, defaultValue) {
@@ -90,7 +104,9 @@ app.put('/api/config/:key', (req, res) => {
 });
 
 app.get('/api/catalogo', (req, res) => {
-  res.json(catalogo);
+  // Sin parámetro ?grupo= se mantiene el comportamiento anterior (catálogo tipo2, pisos 15-16).
+  const grupo = req.query.grupo === 'bajos' ? 'bajos' : 'tipo2';
+  res.json(catalogos[grupo]);
 });
 
 app.get('/api/hallazgos', (req, res) => {

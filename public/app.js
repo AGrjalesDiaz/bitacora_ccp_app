@@ -1,5 +1,6 @@
 // Configuración de la app
 let CATALOGO = [];
+let CATALOGOS = { tipo2: [], bajos: [] };
 let REGLAS = {
   bien: { label: "Bien (sin patología)", intervencion: "", capitulo: "", unidad: "", tipo_cantidad: "", cascada: null },
   panete: {
@@ -29,8 +30,40 @@ const CIELO_RASO_INTERVENCION = {
   "15": "Picar pañete afectado y rehacer pañete + estuco + pintura desde cero",
   "16": "Retiro y reposición de paneles de drywall afectados (nota: regla asumida, validar con criterio del ingeniero)"
 };
+const CIELO_RASO_TIPO_DEFAULT = "Por definir (pendiente confirmar sistema con el ingeniero)";
+const CIELO_RASO_INTERVENCION_DEFAULT = "Por definir — reposición del cielo raso afectado (pendiente confirmar sistema y alcance con el ingeniero)";
+function cieloRasoTipo(piso) { return CIELO_RASO_TIPO[piso] || CIELO_RASO_TIPO_DEFAULT; }
+function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || CIELO_RASO_INTERVENCION_DEFAULT; }
+
+// Grupos de catálogo por piso real. "tipo2" = planta tipo pisos 15-16 (catalogo_planta_tipo2.json).
+// "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo_pisos_6_7_8_10_11_13_14.json).
+const PISO_GRUPO = { "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "10": "bajos", "11": "bajos", "13": "bajos", "14": "bajos" };
+function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
+
+const PISOS_DISPONIBLES = [
+  { value: "6", label: "Piso 6" },
+  { value: "7", label: "Piso 7" },
+  { value: "8", label: "Piso 8" },
+  { value: "10", label: "Piso 10" },
+  { value: "11", label: "Piso 11" },
+  { value: "13", label: "Piso 13" },
+  { value: "14", label: "Piso 14" },
+  { value: "15", label: "Piso 15" },
+  { value: "16", label: "Piso 16" }
+];
 
 const OFICINAS_ORDEN = ["OF501", "OF502", "OF503", "OF504", "OF505", "OF506", "NUCLEO COMUN (ascensores/escalera)", "PUNTO FIJO"];
+const OFICINAS_POR_GRUPO = {
+  tipo2: OFICINAS_ORDEN,
+  bajos: ["OF01", "OF02", "OF03", "OF04", "OF05", "OF06", "PASILLO", "FOSO ASCENSOR", "PUNTO FIJO"]
+};
+function oficinasDeGrupo(grupo) { return OFICINAS_POR_GRUPO[grupo] || OFICINAS_ORDEN; }
+
+function grupoLabel(piso) {
+  return grupoDePiso(piso) === "bajos"
+    ? "Plantas pisos 6, 7, 8, 10, 11, 13 y 14"
+    : "Planta Tipo II — Pisos 15 y 16";
+}
 
 let hallazgos = [];
 let config = {};
@@ -45,25 +78,33 @@ try {
 function uid() { return "h_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8); }
 // Número de oficina física (1-6) a partir del código interno de catálogo OF501..OF506
 function numeroOficina(o) {
-  const m = /^OF50(\d)$/.exec(o);
-  return m ? m[1] : null;
+  let m = /^OF50(\d)$/.exec(o);
+  if (m) return m[1];
+  m = /^OF0(\d)$/.exec(o);
+  if (m) return m[1];
+  return null;
 }
-// Código de espacio que usan los técnicos en el edificio: 1501-1506 (piso 15), 1601-1606 (piso 16)
+// Código de espacio que usan los técnicos en el edificio: 1501-1506 (piso 15), 1601-1606 (piso 16), 601-606 (piso 6), etc.
 function codigoEspacio() {
   const n = numeroOficina(state.oficina);
   if (n) return state.piso + "0" + n;
   if (state.oficina === "NUCLEO COMUN (ascensores/escalera)") return "NC" + state.piso;
   if (state.oficina === "PUNTO FIJO") return "PF" + state.piso;
+  if (state.oficina === "PASILLO") return "PS" + state.piso;
+  if (state.oficina === "FOSO ASCENSOR") return "FA" + state.piso;
   return "P" + state.piso + "-" + state.oficina;
 }
 function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
 function esc(s) { return (s == null ? "" : String(s)).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
 function ofLabel(o, piso) {
+  piso = piso || state.piso;
   const n = numeroOficina(o);
-  if (n) return "Oficina " + (piso || state.piso) + "0" + n;
+  if (n) return "Oficina " + piso + "0" + n;
   if (o === "NUCLEO COMUN (ascensores/escalera)") return "Núcleo común (ascensores/escalera)";
-  if (o === "PUNTO FIJO") return "Punto fijo (pendiente de levantamiento)";
+  if (o === "PUNTO FIJO") return grupoDePiso(piso) === "tipo2" ? "Punto fijo (pendiente de levantamiento)" : "Punto fijo";
+  if (o === "PASILLO") return "Pasillo";
+  if (o === "FOSO ASCENSOR") return "Foso ascensor";
   return o;
 }
 
@@ -103,10 +144,15 @@ function toast(msg) {
 // Cargar datos
 async function loadData() {
   try {
-    // Cargar catálogo
-    const catRes = await fetch('/api/catalogo');
-    CATALOGO = await catRes.json();
-    console.log(`Catálogo cargado: ${CATALOGO.length} elementos`);
+    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14)
+    const [catTipo2Res, catBajosRes] = await Promise.all([
+      fetch('/api/catalogo?grupo=tipo2'),
+      fetch('/api/catalogo?grupo=bajos')
+    ]);
+    CATALOGOS.tipo2 = await catTipo2Res.json();
+    CATALOGOS.bajos = await catBajosRes.json();
+    CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
+    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos`);
 
     // Cargar configuración
     const confRes = await fetch('/api/config');
@@ -148,7 +194,7 @@ function render() {
     ${topbar()}
     ${tabs()}
     <div id="tabcontent"></div>
-    <div class="footer-note">Bitácora CCP — Planta Tipo II (Pisos 15 y 16), Cámara de Comercio de Pereira · Numeración de capítulos en borrador</div>
+    <div class="footer-note">Bitácora CCP — ${esc(grupoLabel(state.piso))}, Cámara de Comercio de Pereira · Numeración de capítulos en borrador</div>
   `;
   document.getElementById("tabcontent").innerHTML =
     state.tab === "captura" ? renderCaptura() :
@@ -162,7 +208,7 @@ function topbar() {
   return `<div class="topbar">
     <div class="brand">
       <div class="mark">CCP</div>
-      <div><h1>Bitácora de diagnóstico</h1><div class="sub">Planta Tipo II — Pisos 15 y 16 · Cámara de Comercio de Pereira</div></div>
+      <div><h1>Bitácora de diagnóstico</h1><div class="sub">${esc(grupoLabel(state.piso))} · Cámara de Comercio de Pereira</div></div>
     </div>
     <div class="tecnico-field">Técnico: <input id="tecnicoInput" type="text" placeholder="Nombre" value="${esc(state.tecnico)}"></div>
   </div>`;
@@ -174,18 +220,19 @@ function tabs() {
 }
 
 function selectorPisoOficina() {
+  const oficinas = oficinasDeGrupo(grupoDePiso(state.piso));
   return `<div class="card"><div class="row">
     <div class="field" style="max-width:140px"><label>Piso real</label>
-      <select id="selPiso"><option value="15" ${state.piso === "15" ? "selected" : ""}>Piso 15</option><option value="16" ${state.piso === "16" ? "selected" : ""}>Piso 16</option></select>
+      <select id="selPiso">${PISOS_DISPONIBLES.map(p => `<option value="${p.value}" ${state.piso === p.value ? "selected" : ""}>${p.label}</option>`).join("")}</select>
     </div>
     <div class="field"><label>Oficina / Zona</label>
-      <select id="selOficina">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
+      <select id="selOficina">${oficinas.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
     </div>
   </div></div>`;
 }
 
 function renderCaptura() {
-  if (state.oficina === "PUNTO FIJO") {
+  if (state.oficina === "PUNTO FIJO" && grupoDePiso(state.piso) === "tipo2") {
     var pfNote = `<div class="card"><div class="alert">Punto Fijo (M72, M74, M75, M76): pendiente de levantamiento — altura de muros y ventanas por definir. No se captura diagnóstico aquí hasta la visita de campo específica.</div></div>`;
   } else pfNote = "";
   const els = elementosDe(state.oficina);
@@ -219,14 +266,37 @@ function renderCaptura() {
   return html;
 }
 
+let fotoStaging = {}; // { [elId]: { saved: [urls...], pendingFiles: [File...], pendingPreviews: [dataURL...] } }
+
+function getFotoStaging(elId, h) {
+  if (!fotoStaging[elId]) {
+    fotoStaging[elId] = { saved: ((h && h.fotos) || []).slice(), pendingFiles: [], pendingPreviews: [] };
+  }
+  return fotoStaging[elId];
+}
+
 function fotosField(h, elId) {
-  const fotos = (h && h.fotos) || [];
-  return `<div><label style="font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase">Fotos (máx. 3)</label>
+  const st = getFotoStaging(elId, h);
+  const total = st.saved.length + st.pendingFiles.length;
+  const savedThumbs = st.saved.map((f, i) => `
+    <div class="thumb-wrap">
+      <img src="${f}">
+      <button type="button" class="thumb-del" data-del-saved="${elId}|${i}" title="Eliminar foto">✕</button>
+    </div>`).join("");
+  const pendingThumbs = st.pendingPreviews.map((f, i) => `
+    <div class="thumb-wrap">
+      <img src="${f}">
+      <span class="thumb-pend-badge">Pendiente</span>
+      <button type="button" class="thumb-del" data-del-pending="${elId}|${i}" title="Quitar">✕</button>
+    </div>`).join("");
+  return `<div>
+    <label style="font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase">Fotos (máx. 3) — ${total}/3</label>
     <div class="file-input-wrapper">
-      <label class="file-label" for="fotoInput_${elId}">Seleccionar fotos</label>
-      <input type="file" accept="image/*" capture="environment" multiple id="fotoInput_${elId}">
+      <label class="file-label" for="fotoInput_${elId}" style="${total >= 3 ? 'opacity:.5;pointer-events:none' : ''}">Agregar foto</label>
+      <input type="file" accept="image/*" capture="environment" multiple id="fotoInput_${elId}" ${total >= 3 ? 'disabled' : ''}>
     </div>
-    <div class="thumbs" id="fotoThumbs">${fotos.map(f => `<img src="${f}">`).join("")}</div>
+    <div class="thumbs" id="fotoThumbs_${elId}">${savedThumbs}${pendingThumbs}</div>
+    <div class="note" style="margin-top:4px">Toma o selecciona varias fotos: cada una se agrega a la lista y todas se suben juntas al presionar Guardar. Usa la ✕ para quitar una foto antes de guardar.</div>
   </div>`;
 }
 
@@ -277,7 +347,7 @@ function formularioElemento(el, h) {
         <select id="f_patologia"><option>Desgaste</option><option>Fisuras</option><option>Manchas</option><option>Demolición por muro asociado</option><option>Otro</option></select>
       </div>`;
   } else if (el.tipo === "CieloRaso") {
-    const tipoFijo = CIELO_RASO_TIPO[state.piso];
+    const tipoFijo = cieloRasoTipo(state.piso);
     body = `<div class="rule-box"><b>Sistema (según piso ${state.piso}):</b> ${esc(tipoFijo)}</div>
       <div class="row">
         <div class="field"><label>Estado</label>
@@ -285,7 +355,7 @@ function formularioElemento(el, h) {
         </div>
         <div class="field"><label>Cantidad base (m²)</label><input type="number" step="0.01" id="f_cantidad" value="${h.cantidad != null ? h.cantidad : el.area_base_m2}"></div>
       </div>
-      <div class="note">Si Afectado → intervención: ${esc(CIELO_RASO_INTERVENCION[state.piso])}</div>`;
+      <div class="note">Si Afectado → intervención: ${esc(cieloRasoIntervencion(state.piso))}</div>`;
   } else if (el.tipo === "Buitron") {
     body = `<div class="rule-box"><b>Regla fija:</b> interior del buitrón sin intervención (queda cerrado). La cara hacia la oficina (muro MV) se interviene según la patología encontrada en ese muro.</div>
       <div class="field"><label>Observaciones de campo</label><textarea id="f_obs">${esc(h.observaciones || "")}</textarea></div>`;
@@ -358,12 +428,13 @@ function renderMemoria() {
 }
 
 function renderFicha() {
+  const oficinasF = oficinasDeGrupo(grupoDePiso(state.piso));
   const h1 = `<div class="card"><div class="row">
     <div class="field" style="max-width:140px"><label>Piso real</label>
-      <select id="selPisoF"><option value="15" ${state.piso === "15" ? "selected" : ""}>Piso 15</option><option value="16" ${state.piso === "16" ? "selected" : ""}>Piso 16</option></select>
+      <select id="selPisoF">${PISOS_DISPONIBLES.map(p => `<option value="${p.value}" ${state.piso === p.value ? "selected" : ""}>${p.label}</option>`).join("")}</select>
     </div>
     <div class="field"><label>Oficina</label>
-      <select id="selOficinaF">${OFICINAS_ORDEN.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
+      <select id="selOficinaF">${oficinasF.map(o => `<option value="${o}" ${state.oficina === o ? "selected" : ""}>${esc(ofLabel(o, state.piso))}</option>`).join("")}</select>
     </div>
   </div></div>`;
   const cod = codigoEspacio();
@@ -377,7 +448,7 @@ function renderFicha() {
   const fotos = hs.flatMap(h => (h.fotos || []).map(f => ({ f, el: h.codigo_elemento })));
   return `${h1}<div class="card">
     <h3 style="margin:0 0 4px">Ficha técnica — ${esc(cod)}</h3>
-    <div style="font-size:12px;color:var(--text-dim);margin-bottom:10px">Cámara de Comercio de Pereira · Planta Tipo II</div>
+    <div style="font-size:12px;color:var(--text-dim);margin-bottom:10px">Cámara de Comercio de Pereira · ${esc(grupoLabel(state.piso))}</div>
     ${stat}
     <div class="grupo-title">Hallazgos "Afectado"</div>
     <div class="tablewrap"><table><thead><tr><th>Elemento</th><th>Detalle</th><th>Cantidad</th><th>Capítulo</th></tr></thead><tbody>
@@ -405,17 +476,29 @@ function wireEvents() {
   const tecInput = document.getElementById("tecnicoInput");
   if (tecInput) tecInput.onchange = e => { state.tecnico = e.target.value; try { localStorage.setItem("ccp_tecnico", state.tecnico); } catch (err) { } };
 
+  function cambiarPiso(nuevoPiso) {
+    state.piso = nuevoPiso;
+    CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
+    const oficinasValidas = oficinasDeGrupo(grupoDePiso(state.piso));
+    if (!oficinasValidas.includes(state.oficina)) state.oficina = oficinasValidas[0];
+  }
+
   const selPiso = document.getElementById("selPiso");
-  if (selPiso) selPiso.onchange = e => { state.piso = e.target.value; state.openEl = null; render(); };
+  if (selPiso) selPiso.onchange = e => { cambiarPiso(e.target.value); state.openEl = null; render(); };
   const selOficina = document.getElementById("selOficina");
   if (selOficina) selOficina.onchange = e => { state.oficina = e.target.value; state.openEl = null; render(); };
   const selPisoF = document.getElementById("selPisoF");
-  if (selPisoF) selPisoF.onchange = e => { state.piso = e.target.value; render(); };
+  if (selPisoF) selPisoF.onchange = e => { cambiarPiso(e.target.value); render(); };
   const selOficinaF = document.getElementById("selOficinaF");
   if (selOficinaF) selOficinaF.onchange = e => { state.oficina = e.target.value; render(); };
 
-  document.querySelectorAll("[data-open]").forEach(b => b.onclick = () => { state.openEl = (state.openEl === b.dataset.open) ? null : b.dataset.open; render(); });
-  document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { state.openEl = null; render(); });
+  document.querySelectorAll("[data-open]").forEach(b => b.onclick = () => {
+    const nuevo = b.dataset.open;
+    if (state.openEl && state.openEl !== nuevo) delete fotoStaging[state.openEl];
+    state.openEl = (state.openEl === nuevo) ? null : nuevo;
+    render();
+  });
+  document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { if (state.openEl) delete fotoStaging[state.openEl]; state.openEl = null; render(); });
 
   const fSev = document.getElementById("f_severidad");
   if (fSev) fSev.onchange = () => {
@@ -444,6 +527,8 @@ function wireEvents() {
       toast("Error: " + err.message);
     }
   };
+
+  if (state.openEl) { wireFotoInput(state.openEl); wireFotoDeleteButtons(state.openEl); }
 }
 
 function wirePanelOnly() {
@@ -456,7 +541,55 @@ function wirePanelOnly() {
     wirePanelOnly();
   };
   document.querySelectorAll("[data-guardar]").forEach(b => b.onclick = () => onGuardar(b.dataset.guardar));
-  document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { state.openEl = null; render(); });
+  document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { if (state.openEl) delete fotoStaging[state.openEl]; state.openEl = null; render(); });
+  if (state.openEl) { wireFotoInput(state.openEl); wireFotoDeleteButtons(state.openEl); }
+}
+
+function wireFotoInput(elId) {
+  const inp = document.getElementById("fotoInput_" + elId);
+  if (!inp) return;
+  inp.onchange = () => {
+    const st = fotoStaging[elId];
+    if (!st) return;
+    const total = st.saved.length + st.pendingFiles.length;
+    const room = Math.max(0, 3 - total);
+    const files = Array.from(inp.files || []).slice(0, room);
+    if (files.length === 0) { inp.value = ""; return; }
+    let pendientes = files.length;
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        st.pendingFiles.push(file);
+        st.pendingPreviews.push(reader.result);
+        pendientes--;
+        if (pendientes === 0) {
+          inp.value = "";
+          const el = CATALOGO.find(e => e.id === elId);
+          document.getElementById("panel_" + elId).outerHTML = formularioElemento(el, hallazgoDe(elId, state.piso));
+          wirePanelOnly();
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+}
+
+function wireFotoDeleteButtons(elId) {
+  document.querySelectorAll(`[data-del-saved^="${elId}|"]`).forEach(b => b.onclick = () => {
+    const idx = parseInt(b.dataset.delSaved.split("|")[1], 10);
+    fotoStaging[elId].saved.splice(idx, 1);
+    const el = CATALOGO.find(e => e.id === elId);
+    document.getElementById("panel_" + elId).outerHTML = formularioElemento(el, hallazgoDe(elId, state.piso));
+    wirePanelOnly();
+  });
+  document.querySelectorAll(`[data-del-pending^="${elId}|"]`).forEach(b => b.onclick = () => {
+    const idx = parseInt(b.dataset.delPending.split("|")[1], 10);
+    fotoStaging[elId].pendingFiles.splice(idx, 1);
+    fotoStaging[elId].pendingPreviews.splice(idx, 1);
+    const el = CATALOGO.find(e => e.id === elId);
+    document.getElementById("panel_" + elId).outerHTML = formularioElemento(el, hallazgoDe(elId, state.piso));
+    wirePanelOnly();
+  });
 }
 
 async function onGuardar(elId) {
@@ -503,9 +636,11 @@ async function onGuardar(elId) {
     doc.estado = val("f_estado") || "Bien";
     doc.cantidad = parseFloat(val("f_cantidad"));
     doc.unidad = "m²";
-    doc.tipo_sistema = CIELO_RASO_TIPO[state.piso];
-    doc.intervencion = doc.estado === "Afectado" ? CIELO_RASO_INTERVENCION[state.piso] : "";
-    doc.capitulo = state.piso === "15" ? "1.5 Cielo raso — Pañete, estuco y pintura" : "1.6 Cielo raso — Drywall";
+    doc.tipo_sistema = cieloRasoTipo(state.piso);
+    doc.intervencion = doc.estado === "Afectado" ? cieloRasoIntervencion(state.piso) : "";
+    doc.capitulo = state.piso === "15" ? "1.5 Cielo raso — Pañete, estuco y pintura"
+      : state.piso === "16" ? "1.6 Cielo raso — Drywall"
+      : "1.5/1.6 Cielo raso — Sistema por definir (pendiente confirmar con el ingeniero)";
   } else if (el.tipo === "Buitron") {
     doc.estado = "Informativo";
     doc.observaciones = val("f_obs");
@@ -521,27 +656,26 @@ async function onGuardar(elId) {
     doc.observaciones = val("f_obs");
   }
 
-  // Procesar fotos
-  const fotoInput = document.getElementById("fotoInput_" + elId) || document.getElementById("fotoInput_new");
-  if (fotoInput && fotoInput.files && fotoInput.files.length) {
-    const files = Array.from(fotoInput.files).slice(0, 3);
-    for (const file of files) {
-      try {
-        const formData = new FormData();
-        formData.append('photo', file);
-        const res = await fetch('/api/upload-photo', { method: 'POST', body: formData });
-        const data = await res.json().catch(() => ({}));
-        if (res.ok && data.url) {
-          doc.fotos.push(data.url);
-        } else {
-          toast('Error subiendo foto: ' + (data.error || ('HTTP ' + res.status)));
-        }
-      } catch (err) {
-        toast('Error subiendo foto: ' + err.message);
+  // Procesar fotos (cola de pendientes por subir + las ya guardadas que no se eliminaron)
+  const staging = fotoStaging[elId] || { saved: existing.fotos || [], pendingFiles: [] };
+  let fotosFinal = staging.saved.slice();
+  for (const file of staging.pendingFiles) {
+    try {
+      const formData = new FormData();
+      formData.append('photo', file);
+      const res = await fetch('/api/upload-photo', { method: 'POST', body: formData });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.url) {
+        fotosFinal.push(data.url);
+      } else {
+        toast('Error subiendo foto: ' + (data.error || ('HTTP ' + res.status)));
       }
+    } catch (err) {
+      toast('Error subiendo foto: ' + err.message);
     }
-    if (doc.fotos.length > 3) doc.fotos = doc.fotos.slice(0, 3);
   }
+  if (fotosFinal.length > 3) fotosFinal = fotosFinal.slice(0, 3);
+  doc.fotos = fotosFinal;
 
   // Guardar hallazgo
   try {
@@ -581,6 +715,7 @@ async function onGuardar(elId) {
       toast("Guardado.");
     }
 
+    delete fotoStaging[elId];
     await refreshHallazgos();
     state.openEl = null;
     render();
