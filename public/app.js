@@ -289,14 +289,21 @@ function fotosField(h, elId) {
       <span class="thumb-pend-badge">Pendiente</span>
       <button type="button" class="thumb-del" data-del-pending="${elId}|${i}" title="Quitar">✕</button>
     </div>`).join("");
+  const lleno = total >= 3;
   return `<div>
     <label style="font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase">Fotos (máx. 3) — ${total}/3</label>
-    <div class="file-input-wrapper">
-      <label class="file-label" for="fotoInput_${elId}" style="${total >= 3 ? 'opacity:.5;pointer-events:none' : ''}">Agregar foto</label>
-      <input type="file" accept="image/*" capture="environment" multiple id="fotoInput_${elId}" ${total >= 3 ? 'disabled' : ''}>
+    <div class="row" style="gap:8px;margin-top:4px">
+      <div class="file-input-wrapper">
+        <label class="file-label" for="fotoInputCam_${elId}" style="${lleno ? 'opacity:.5;pointer-events:none' : ''}">Tomar foto</label>
+        <input type="file" accept="image/*" capture="environment" id="fotoInputCam_${elId}" ${lleno ? 'disabled' : ''}>
+      </div>
+      <div class="file-input-wrapper">
+        <label class="file-label" for="fotoInputLib_${elId}" style="${lleno ? 'opacity:.5;pointer-events:none' : ''}">Elegir de galería / archivo</label>
+        <input type="file" accept="image/*" multiple id="fotoInputLib_${elId}" ${lleno ? 'disabled' : ''}>
+      </div>
     </div>
     <div class="thumbs" id="fotoThumbs_${elId}">${savedThumbs}${pendingThumbs}</div>
-    <div class="note" style="margin-top:4px">Toma o selecciona varias fotos: cada una se agrega a la lista y todas se suben juntas al presionar Guardar. Usa la ✕ para quitar una foto antes de guardar.</div>
+    <div class="note" style="margin-top:4px">"Tomar foto" abre la cámara directo. "Elegir de galería / archivo" te deja escoger una foto ya guardada en el celular o el computador. Puedes agregar varias antes de guardar y quitar cualquiera con la ✕.</div>
   </div>`;
 }
 
@@ -528,7 +535,7 @@ function wireEvents() {
     }
   };
 
-  if (state.openEl) { wireFotoInput(state.openEl); wireFotoDeleteButtons(state.openEl); }
+  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); }
 }
 
 function wirePanelOnly() {
@@ -542,36 +549,39 @@ function wirePanelOnly() {
   };
   document.querySelectorAll("[data-guardar]").forEach(b => b.onclick = () => onGuardar(b.dataset.guardar));
   document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { if (state.openEl) delete fotoStaging[state.openEl]; state.openEl = null; render(); });
-  if (state.openEl) { wireFotoInput(state.openEl); wireFotoDeleteButtons(state.openEl); }
+  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); }
 }
 
-function wireFotoInput(elId) {
-  const inp = document.getElementById("fotoInput_" + elId);
-  if (!inp) return;
-  inp.onchange = () => {
-    const st = fotoStaging[elId];
-    if (!st) return;
-    const total = st.saved.length + st.pendingFiles.length;
-    const room = Math.max(0, 3 - total);
-    const files = Array.from(inp.files || []).slice(0, room);
-    if (files.length === 0) { inp.value = ""; return; }
-    let pendientes = files.length;
-    files.forEach(file => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        st.pendingFiles.push(file);
-        st.pendingPreviews.push(reader.result);
-        pendientes--;
-        if (pendientes === 0) {
-          inp.value = "";
-          const el = CATALOGO.find(e => e.id === elId);
-          document.getElementById("panel_" + elId).outerHTML = formularioElemento(el, hallazgoDe(elId, state.piso));
-          wirePanelOnly();
-        }
-      };
-      reader.readAsDataURL(file);
-    });
+function wireFotoInputs(elId) {
+  const handleInput = (inp) => {
+    if (!inp) return;
+    inp.onchange = () => {
+      const st = fotoStaging[elId];
+      if (!st) return;
+      const total = st.saved.length + st.pendingFiles.length;
+      const room = Math.max(0, 3 - total);
+      const files = Array.from(inp.files || []).slice(0, room);
+      if (files.length === 0) { inp.value = ""; return; }
+      let pendientes = files.length;
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          st.pendingFiles.push(file);
+          st.pendingPreviews.push(reader.result);
+          pendientes--;
+          if (pendientes === 0) {
+            inp.value = "";
+            const el = CATALOGO.find(e => e.id === elId);
+            document.getElementById("panel_" + elId).outerHTML = formularioElemento(el, hallazgoDe(elId, state.piso));
+            wirePanelOnly();
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    };
   };
+  handleInput(document.getElementById("fotoInputCam_" + elId));
+  handleInput(document.getElementById("fotoInputLib_" + elId));
 }
 
 function wireFotoDeleteButtons(elId) {
