@@ -144,9 +144,192 @@ function upsertHallazgoLocal(doc) {
 
 function estadoBadge(h) {
   if (!h) return `<span class="badge pend">Sin capturar</span>`;
-  if (h.estado === "Afectado") return `<span class="badge bad">Afectado</span>`;
-  if (h.estado === "Bien") return `<span class="badge ok">Bien</span>`;
-  return `<span class="badge pend">${esc(h.estado || "")}</span>`;
+  let base;
+  if (h.estado === "Afectado") base = `<span class="badge bad">Afectado</span>`;
+  else if (h.estado === "Bien") base = `<span class="badge ok">Bien</span>`;
+  else base = `<span class="badge pend">${esc(h.estado || "")}</span>`;
+  if (h._pendienteSync) base += ` <span class="badge warn" title="Guardado en este celular, falta enviar al servidor">⏳ Pendiente de sincronizar</span>`;
+  return base;
+}
+
+// ============ Modo sin conexión: borradores, cola de guardado local y sincronización automática ============
+// Nada de esto cambia el comportamiento normal cuando hay señal: solo entra en juego si un fetch falla o
+// se demora demasiado (fetchConTimeout), para no perder lo capturado en campo.
+
+// fetch con límite de tiempo: si la señal está muy débil y la petición no responde en el plazo dado,
+// se aborta y se trata como fallo de red (en vez de dejar al técnico esperando indefinidamente).
+async function fetchConTimeout(url, options, timeoutMs) {
+  timeoutMs = timeoutMs || 15000;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, Object.assign({}, options || {}, { signal: controller.signal }));
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function safeParseLocalStorage(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+function safeSetLocalStorage(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* espacio lleno u otro error: no es crítico */ }
+}
+
+// --- Borradores por elemento (para no perder lo tecleado si falla el guardado o se cierra la app antes de dar Guardar) ---
+function obtenerDraft(piso, elId) { return safeParseLocalStorage("ccp_draft_" + piso + "_" + elId); }
+function guardarDraft(piso, elId, valores) { safeSetLocalStorage("ccp_draft_" + piso + "_" + elId, valores); }
+function borrarDraft(piso, elId) { try { localStorage.removeItem("ccp_draft_" + piso + "_" + elId); } catch (e) { } }
+
+// --- Base local (IndexedDB) para encolar hallazgos y fotos cuando no hay señal ---
+const OFFLINE_DB_NAME = "ccp_offline_db";
+const OFFLINE_DB_VERSION = 1;
+let offlineDBPromise = null;
+
+function abrirOfflineDB() {
+  if (offlineDBPromise) return offlineDBPromise;
+  offlineDBPromise = new Promise((resolve) => {
+    if (!window.indexedDB) { resolve(null); return; }
+    let req;
+    try { req = indexedDB.open(OFFLINE_DB_NAME, OFFLINE_DB_VERSION); } catch (e) { resolve(null); return; }
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains("pendingHallazgos")) {
+        db.createObjectStore("pendingHallazgos", { keyPath: "clave" });
+      }
+      if (!db.objectStoreNames.contains("pendingPhotos")) {
+        const store = db.createObjectStore("pendingPhotos", { keyPath: "id", autoIncrement: true });
+        store.createIndex("clave", "clave", { unique: false });
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => { console.error("No se pudo abrir la base local sin conexión:", req.error); resolve(null); };
+  });
+  return offlineDBPromise;
+}
+
+function claveHallazgo(piso_real, codigo_elemento) { return piso_real + "|" + codigo_elemento; }
+
+// Guarda (o reemplaza) un hallazgo pendiente por enviar, junto con sus fotos aún no subidas.
+async function guardarHallazgoPendiente(doc, pendingFiles) {
+  const db = await abrirOfflineDB();
+  if (!db) return false; // IndexedDB no disponible en este navegador (caso muy raro) — no se puede encolar
+  const clave = claveHallazgo(doc.piso_real, doc.codigo_elemento);
+  await new Promise((resolve, reject) => {
+    const tx = db.transaction(["pendingHallazgos", "pendingPhotos"], "readwrite");
+    tx.objectStore("pendingHallazgos").put({ clave, doc });
+    const photoStore = tx.objectStore("pendingPhotos");
+    const idx = photoStore.index("clave");
+    idx.openCursor(IDBKeyRange.only(clave)).onsuccess = (e) => {
+      const cursor = e.target.result;
+      if (cursor) { cursor.delete(); cursor.continue(); }
+    };
+    (pendingFiles || []).forEach(file => photoStore.add({ clave, file }));
+    tx.oncomplete = resolve;
+    tx.onerror = () => reject(tx.error);
+  });
+  return true;
+}
+
+async function listarHallazgosPendientes() {
+  const db = await abrirOfflineDB();
+  if (!db) return [];
+  return new Promise((resolve) => {
+    const tx = db.transaction("pendingHallazgos", "readonly");
+    const req = tx.objectStore("pendingHallazgos").getAll();
+    req.onsuccess = () => resolve(req.result || []);
+    req.onerror = () => resolve([]);
+  });
+}
+
+async function obtenerFotosPendientes(clave) {
+  const db = await abrirOfflineDB();
+  if (!db) return [];
+  return new Promise((resolve) => {
+    const tx = db.transaction("pendingPhotos", "readonly");
+    const idx = tx.objectStore("pendingPhotos").index("clave");
+    const req = idx.getAll(IDBKeyRange.only(clave));
+    req.onsuccess = () => resolve(req.result || []);
+    req.onerror = () => resolve([]);
+  });
+}
+
+async function borrarHallazgoPendiente(clave) {
+  const db = await abrirOfflineDB();
+  if (!db) return;
+  await new Promise((resolve) => {
+    const tx = db.transaction(["pendingHallazgos", "pendingPhotos"], "readwrite");
+    tx.objectStore("pendingHallazgos").delete(clave);
+    const photoStore = tx.objectStore("pendingPhotos");
+    const idx = photoStore.index("clave");
+    idx.openCursor(IDBKeyRange.only(clave)).onsuccess = (e) => {
+      const cursor = e.target.result;
+      if (cursor) { cursor.delete(); cursor.continue(); }
+    };
+    tx.oncomplete = resolve;
+    tx.onerror = () => resolve();
+  });
+}
+
+let pendientesCount = 0;
+async function actualizarContadorPendientes() {
+  const lista = await listarHallazgosPendientes();
+  pendientesCount = lista.length;
+}
+
+// Recorre la cola local y trata de enviar cada hallazgo pendiente (y sus fotos) al servidor.
+// Se llama al cargar la app, cuando el navegador avisa que volvió la conexión, y cada cierto tiempo como respaldo.
+let sincronizandoPendientes = false;
+async function sincronizarPendientes() {
+  if (sincronizandoPendientes) return;
+  if (typeof navigator !== "undefined" && navigator.onLine === false) return;
+  sincronizandoPendientes = true;
+  try {
+    const lista = await listarHallazgosPendientes();
+    if (!lista.length) { pendientesCount = 0; return; }
+    let sincronizados = 0;
+    for (const item of lista) {
+      const doc = item.doc;
+      const clave = item.clave;
+      try {
+        const fotosPendientes = await obtenerFotosPendientes(clave);
+        let fotosFinal = (doc.fotos || []).slice();
+        for (const fp of fotosPendientes) {
+          const formData = new FormData();
+          formData.append('photo', fp.file);
+          const res = await fetchConTimeout('/api/upload-photo', { method: 'POST', body: formData }, 15000);
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && data.url) fotosFinal.push(data.url);
+        }
+        if (fotosFinal.length > 3) fotosFinal = fotosFinal.slice(0, 3);
+        const docFinal = Object.assign({}, doc, { fotos: fotosFinal });
+        docFinal._pendienteSync = false; // explícito en `false` (no `delete`): upsertHallazgoLocal mezcla con el objeto
+        // anterior ({...viejo, ...nuevo}), y una propiedad eliminada en el nuevo no borra la que ya existía en el viejo.
+        const res = await fetchConTimeout('/api/hallazgos', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(docFinal)
+        }, 15000);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const saved = await res.json().catch(() => ({}));
+        docFinal.fecha = saved.fecha || docFinal.fecha;
+        await borrarHallazgoPendiente(clave);
+        upsertHallazgoLocal(docFinal);
+        sincronizados++;
+      } catch (err) {
+        console.warn('Todavía sin señal suficiente para sincronizar', clave, '—', err.message);
+        // Se queda en la cola, se reintenta en la próxima pasada. No se pierde nada.
+      }
+    }
+    await actualizarContadorPendientes();
+    if (sincronizados > 0) {
+      toast(sincronizados + (sincronizados === 1 ? ' hallazgo pendiente sincronizado.' : ' hallazgos pendientes sincronizados.'));
+      render();
+    }
+  } finally {
+    sincronizandoPendientes = false;
+  }
 }
 
 function toast(msg) {
@@ -162,44 +345,64 @@ async function loadData() {
   try {
     // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14)
     const [catTipo2Res, catBajosRes] = await Promise.all([
-      fetch('/api/catalogo?grupo=tipo2'),
-      fetch('/api/catalogo?grupo=bajos')
+      fetchConTimeout('/api/catalogo?grupo=tipo2', {}, 15000),
+      fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000)
     ]);
     CATALOGOS.tipo2 = await catTipo2Res.json();
     CATALOGOS.bajos = await catBajosRes.json();
     CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
+    safeSetLocalStorage('ccp_cache_catalogos', CATALOGOS);
     console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos`);
 
     // Cargar configuración
-    const confRes = await fetch('/api/config');
+    const confRes = await fetchConTimeout('/api/config', {}, 15000);
     config = await confRes.json();
+    safeSetLocalStorage('ccp_cache_config', config);
     console.log('Config cargada:', config);
 
     // Cargar hallazgos
     await refreshHallazgos();
 
     render();
+    await actualizarContadorPendientes();
+    render();
+    sincronizarPendientes();
   } catch (err) {
-    console.error('Error cargando datos:', err);
-    toast('Error cargando datos: ' + err.message);
+    console.error('Sin conexión al cargar datos, probando la última copia guardada en este celular:', err);
+    const cacheCat = safeParseLocalStorage('ccp_cache_catalogos');
+    if (cacheCat) {
+      CATALOGOS = cacheCat;
+      CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
+      config = safeParseLocalStorage('ccp_cache_config') || { umbral_fisura_mm: 5 };
+      hallazgos = safeParseLocalStorage('ccp_cache_hallazgos') || [];
+      hallazgos.forEach(h => { if (!h.fotos) h.fotos = []; });
+      toast('Sin conexión: usando la última copia guardada en este celular.');
+      render();
+      await actualizarContadorPendientes();
+      render();
+    } else {
+      toast('Error cargando datos: ' + err.message + ' — abre la app una vez con señal antes de empezar a capturar sin conexión.');
+    }
   }
 }
 
 async function refreshHallazgos() {
   try {
-    const res = await fetch('/api/hallazgos');
-    hallazgos = await res.json();
-    hallazgos.forEach(h => {
+    const res = await fetchConTimeout('/api/hallazgos', {}, 15000);
+    const nuevos = await res.json();
+    nuevos.forEach(h => {
       if (h.fotos && typeof h.fotos === 'string') {
         h.fotos = JSON.parse(h.fotos);
       } else if (!h.fotos) {
         h.fotos = [];
       }
     });
+    hallazgos = nuevos;
+    safeSetLocalStorage('ccp_cache_hallazgos', hallazgos);
     console.log(`Hallazgos cargados: ${hallazgos.length}`);
   } catch (err) {
-    console.error('Error cargando hallazgos:', err);
-    toast('Error cargando hallazgos');
+    console.error('Error cargando hallazgos (se conserva la última copia ya cargada):', err);
+    // No se sobreescribe `hallazgos` con vacío: si ya había datos en memoria o de la caché local, se mantienen.
   }
 }
 
@@ -226,6 +429,7 @@ function topbar() {
       <div class="mark">CCP</div>
       <div><h1>Bitácora de diagnóstico</h1><div class="sub">${esc(grupoLabel(state.piso))} · Cámara de Comercio de Pereira</div></div>
     </div>
+    ${pendientesCount > 0 ? `<span class="badge warn" title="Guardados en este celular, pendientes de enviar al servidor apenas vuelva la señal">⏳ ${pendientesCount} ${pendientesCount === 1 ? 'pendiente' : 'pendientes'} de sincronizar</span>` : ''}
     <div class="tecnico-field">Técnico: <input id="tecnicoInput" type="text" placeholder="Nombre" value="${esc(state.tecnico)}"></div>
   </div>`;
 }
@@ -325,6 +529,10 @@ function fotosField(h, elId) {
 
 function formularioElemento(el, h) {
   h = h || { codigo_elemento: el.id, codigo_espacio: codigoEspacio(), tipo_elemento: el.tipo, oficina: state.oficina, piso_real: state.piso, estado: "Bien", fotos: [] };
+  // Si hay un borrador guardado en este celular (por ejemplo porque se cerró la app o falló el guardado antes
+  // de dar clic en "Guardar"), se antepone a los valores ya capturados para no perder lo tecleado.
+  const draft = obtenerDraft(state.piso, el.id);
+  if (draft) h = Object.assign({}, h, draft);
   let body = "";
   if (el.tipo === "Muro") {
     const sevKey = h.severidad_key || "bien";
@@ -551,7 +759,7 @@ function wireEvents() {
     }
   };
 
-  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); }
+  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); wireDraftAutosave(state.openEl); }
 }
 
 function wirePanelOnly() {
@@ -565,7 +773,7 @@ function wirePanelOnly() {
   };
   document.querySelectorAll("[data-guardar]").forEach(b => b.onclick = () => onGuardar(b.dataset.guardar));
   document.querySelectorAll("[data-cerrar]").forEach(b => b.onclick = () => { if (state.openEl) delete fotoStaging[state.openEl]; state.openEl = null; render(); });
-  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); }
+  if (state.openEl) { wireFotoInputs(state.openEl); wireFotoDeleteButtons(state.openEl); wireDraftAutosave(state.openEl); }
 }
 
 function wireFotoInputs(elId) {
@@ -598,6 +806,29 @@ function wireFotoInputs(elId) {
   };
   handleInput(document.getElementById("fotoInputCam_" + elId));
   handleInput(document.getElementById("fotoInputLib_" + elId));
+}
+
+// Guarda automáticamente en este celular (localStorage) lo que se va tecleando en el panel abierto,
+// para no perderlo si falla el guardado, se cierra la app, o se acaba la batería antes de dar clic en "Guardar".
+function wireDraftAutosave(elId) {
+  const panel = document.getElementById("panel_" + elId);
+  if (!panel) return;
+  const camposMapa = {
+    f_severidad: "severidad_key", f_cantidad: "cantidad", f_estado: "estado",
+    f_material: "material", f_patologia: "patologia", f_espesor: "espesor_mm",
+    f_ml_grapado: "ml_grapado", f_obs: "observaciones"
+  };
+  const guardar = () => {
+    const valores = {};
+    let hayAlgo = false;
+    Object.keys(camposMapa).forEach(id => {
+      const n = document.getElementById(id);
+      if (n && n.value !== "") { valores[camposMapa[id]] = n.value; hayAlgo = true; }
+    });
+    if (hayAlgo) guardarDraft(state.piso, elId, valores);
+  };
+  panel.oninput = guardar;
+  panel.onchange = guardar;
 }
 
 function wireFotoDeleteButtons(elId) {
@@ -682,77 +913,119 @@ async function onGuardar(elId) {
     doc.observaciones = val("f_obs");
   }
 
-  // Procesar fotos (cola de pendientes por subir + las ya guardadas que no se eliminaron)
+  // Procesar fotos (cola de pendientes por subir + las ya guardadas que no se eliminaron).
+  // Si en algún punto falla la red, se deja de intentar subir más fotos y todo el hallazgo
+  // (con las fotos que ya se alcanzaron a subir + las que faltan) se encola para sincronizar después.
   const staging = fotoStaging[elId] || { saved: existing.fotos || [], pendingFiles: [] };
   let fotosFinal = staging.saved.slice();
-  for (const file of staging.pendingFiles) {
+  let archivosSinSubir = staging.pendingFiles.slice();
+  let falloRed = false;
+  while (archivosSinSubir.length) {
+    const file = archivosSinSubir[0];
     try {
       const formData = new FormData();
       formData.append('photo', file);
-      const res = await fetch('/api/upload-photo', { method: 'POST', body: formData });
+      const res = await fetchConTimeout('/api/upload-photo', { method: 'POST', body: formData }, 15000);
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.url) {
         fotosFinal.push(data.url);
       } else {
         toast('Error subiendo foto: ' + (data.error || ('HTTP ' + res.status)));
       }
+      archivosSinSubir.shift();
     } catch (err) {
-      toast('Error subiendo foto: ' + err.message);
+      falloRed = true; // sin señal / se agotó el tiempo — se deja de intentar, se encola lo que falte
+      break;
     }
   }
   if (fotosFinal.length > 3) fotosFinal = fotosFinal.slice(0, 3);
   doc.fotos = fotosFinal;
 
-  // Guardar hallazgo
-  try {
-    const res = await fetch('/api/hallazgos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(doc)
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const saved = await res.json().catch(() => ({}));
-    doc.fecha = saved.fecha || new Date().toISOString();
-    upsertHallazgoLocal(doc);
+  // Guardar hallazgo (si ya hubo fallo de red subiendo fotos, ni se intenta — se va directo a la cola local)
+  if (!falloRed) {
+    try {
+      const res = await fetchConTimeout('/api/hallazgos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(doc)
+      }, 15000);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const saved = await res.json().catch(() => ({}));
+      doc.fecha = saved.fecha || new Date().toISOString();
+      doc._pendienteSync = false; // por si este elemento ya estaba marcado pendiente de un intento anterior
+      upsertHallazgoLocal(doc);
 
-    // Cascada: si es muro con grieta_grave, generar hallazgo de piso
-    if (el.tipo === "Muro" && doc.severidad_key === "grieta_grave") {
-      const pisoEl = CATALOGO.find(e => e.tipo === "Piso" && e.oficina === state.oficina);
-      if (pisoEl) {
-        const pisoDoc = {
-          codigo_elemento: pisoEl.id,
-          codigo_espacio: codigoEspacio(),
-          tipo_elemento: "Piso",
-          oficina: state.oficina,
-          piso_real: state.piso,
-          tecnico: state.tecnico,
-          estado: "Afectado",
-          material: (hallazgoDe(pisoEl.id, state.piso) || {}).material || "Por definir",
-          cantidad: pisoEl.area_base_m2,
-          unidad: "m²",
-          patologia: "Demolición por muro asociado",
-          capitulo: "1.4 Pisos — Demolición y reposición",
-          codigo_origen: elId,
-          fotos: (hallazgoDe(pisoEl.id, state.piso) || {}).fotos || []
-        };
-        const resPiso = await fetch('/api/hallazgos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pisoDoc) });
-        const savedPiso = await resPiso.json().catch(() => ({}));
-        pisoDoc.fecha = savedPiso.fecha || new Date().toISOString();
-        upsertHallazgoLocal(pisoDoc);
-        toast("Guardado. Se generó automáticamente el hallazgo de Piso por demolición del muro " + elId + ".");
+      // Cascada: si es muro con grieta_grave, generar hallazgo de piso
+      if (el.tipo === "Muro" && doc.severidad_key === "grieta_grave") {
+        const pisoEl = CATALOGO.find(e => e.tipo === "Piso" && e.oficina === state.oficina);
+        if (pisoEl) {
+          const pisoDoc = {
+            codigo_elemento: pisoEl.id,
+            codigo_espacio: codigoEspacio(),
+            tipo_elemento: "Piso",
+            oficina: state.oficina,
+            piso_real: state.piso,
+            tecnico: state.tecnico,
+            estado: "Afectado",
+            material: (hallazgoDe(pisoEl.id, state.piso) || {}).material || "Por definir",
+            cantidad: pisoEl.area_base_m2,
+            unidad: "m²",
+            patologia: "Demolición por muro asociado",
+            capitulo: "1.4 Pisos — Demolición y reposición",
+            codigo_origen: elId,
+            fotos: (hallazgoDe(pisoEl.id, state.piso) || {}).fotos || []
+          };
+          try {
+            const resPiso = await fetchConTimeout('/api/hallazgos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pisoDoc) }, 15000);
+            if (!resPiso.ok) throw new Error(`HTTP ${resPiso.status}`);
+            const savedPiso = await resPiso.json().catch(() => ({}));
+            pisoDoc.fecha = savedPiso.fecha || new Date().toISOString();
+            pisoDoc._pendienteSync = false;
+            upsertHallazgoLocal(pisoDoc);
+            toast("Guardado. Se generó automáticamente el hallazgo de Piso por demolición del muro " + elId + ".");
+          } catch (errPiso) {
+            pisoDoc._pendienteSync = true;
+            await guardarHallazgoPendiente(pisoDoc, []);
+            upsertHallazgoLocal(pisoDoc);
+            await actualizarContadorPendientes();
+            toast("Guardado. El hallazgo de Piso generado automáticamente quedó pendiente de sincronizar (sin señal).");
+          }
+        } else {
+          toast("Guardado.");
+        }
       } else {
         toast("Guardado.");
       }
-    } else {
-      toast("Guardado.");
-    }
 
-    delete fotoStaging[elId];
-    state.openEl = null;
-    render();
-  } catch (err) {
-    console.error('Error guardando:', err);
-    toast('Error guardando: ' + err.message);
+      delete fotoStaging[elId];
+      borrarDraft(state.piso, elId);
+      state.openEl = null;
+      render();
+      return;
+    } catch (err) {
+      console.warn('Sin señal al guardar, se encola localmente:', err.message);
+      falloRed = true;
+    }
+  }
+
+  if (falloRed) {
+    doc._pendienteSync = true;
+    const seEncolo = await guardarHallazgoPendiente(doc, archivosSinSubir);
+    if (seEncolo) {
+      // Quedó a salvo en este celular (IndexedDB): se puede cerrar el panel con tranquilidad, se sincroniza solo.
+      upsertHallazgoLocal(doc);
+      await actualizarContadorPendientes();
+      delete fotoStaging[elId];
+      borrarDraft(state.piso, elId);
+      state.openEl = null;
+      toast('Sin señal: guardado en este celular. Se enviará solo cuando vuelva la conexión.');
+      render();
+    } else {
+      // Caso muy raro: este navegador no tiene IndexedDB disponible, así que no hay dónde encolarlo.
+      // Se deja el panel abierto y el borrador guardado (ya se autoguarda mientras escribes) para no perder nada;
+      // el técnico debe reintentar "Guardar" cuando recupere señal, sin cerrar esta pantalla.
+      toast('Sin señal y este celular no puede guardar la cola local. Sin cerrar esta pantalla, vuelve a intentar "Guardar" cuando tengas señal.');
+    }
   }
 }
 
@@ -772,6 +1045,11 @@ async function exportCSV(kind) {
     toast('Error exportando: ' + err.message);
   }
 }
+
+// Reintentar la sincronización de la cola local apenas el navegador avise que volvió la conexión,
+// y además cada cierto tiempo como respaldo (en celulares la señal a veces vuelve sin disparar el evento).
+try { window.addEventListener('online', sincronizarPendientes); } catch (e) { }
+try { setInterval(sincronizarPendientes, 25000); } catch (e) { }
 
 // Iniciar
 loadData();
