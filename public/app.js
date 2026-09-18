@@ -37,15 +37,20 @@ function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || C
 
 // Grupos de catálogo por piso real. "tipo2" = planta tipo pisos 15-16 (catalogo_planta_tipo2.json).
 // "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo_pisos_6_7_8_10_11_13_14.json).
-const PISO_GRUPO = { "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "10": "bajos", "11": "bajos", "13": "bajos", "14": "bajos" };
+// Pisos 9 y 12 reutilizan el mismo catalogo "bajos": Alejandro confirmo que la distribucion de espacios
+// es la misma (~88% de coincidencia geometrica tras rotacion) y que no va a hacer catalogo aparte para ellos;
+// solo Oficina 3 y Oficina 4 tienen area distinta y se verifican en sitio, sin requerir cambios de catalogo.
+const PISO_GRUPO = { "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
 function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
 
 const PISOS_DISPONIBLES = [
   { value: "6", label: "Piso 6" },
   { value: "7", label: "Piso 7" },
   { value: "8", label: "Piso 8" },
+  { value: "9", label: "Piso 9" },
   { value: "10", label: "Piso 10" },
   { value: "11", label: "Piso 11" },
+  { value: "12", label: "Piso 12" },
   { value: "13", label: "Piso 13" },
   { value: "14", label: "Piso 14" },
   { value: "15", label: "Piso 15" },
