@@ -131,6 +131,17 @@ function hallazgoDe(codigo_elemento, piso_real) {
   return hallazgos.find(h => h.codigo_elemento === codigo_elemento && h.piso_real === piso_real);
 }
 
+// Actualiza el hallazgo en memoria localmente (mismo criterio que usa el servidor para hacer upsert),
+// evitando tener que re-descargar TODO el historial de hallazgos de todos los pisos después de cada Guardar.
+function upsertHallazgoLocal(doc) {
+  const idx = hallazgos.findIndex(h => h.piso_real === doc.piso_real && h.codigo_elemento === doc.codigo_elemento);
+  if (idx >= 0) {
+    hallazgos[idx] = { ...hallazgos[idx], ...doc };
+  } else {
+    hallazgos.push(doc);
+  }
+}
+
 function estadoBadge(h) {
   if (!h) return `<span class="badge pend">Sin capturar</span>`;
   if (h.estado === "Afectado") return `<span class="badge bad">Afectado</span>`;
@@ -700,6 +711,9 @@ async function onGuardar(elId) {
       body: JSON.stringify(doc)
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const saved = await res.json().catch(() => ({}));
+    doc.fecha = saved.fecha || new Date().toISOString();
+    upsertHallazgoLocal(doc);
 
     // Cascada: si es muro con grieta_grave, generar hallazgo de piso
     if (el.tipo === "Muro" && doc.severidad_key === "grieta_grave") {
@@ -721,7 +735,10 @@ async function onGuardar(elId) {
           codigo_origen: elId,
           fotos: (hallazgoDe(pisoEl.id, state.piso) || {}).fotos || []
         };
-        await fetch('/api/hallazgos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pisoDoc) });
+        const resPiso = await fetch('/api/hallazgos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pisoDoc) });
+        const savedPiso = await resPiso.json().catch(() => ({}));
+        pisoDoc.fecha = savedPiso.fecha || new Date().toISOString();
+        upsertHallazgoLocal(pisoDoc);
         toast("Guardado. Se generó automáticamente el hallazgo de Piso por demolición del muro " + elId + ".");
       } else {
         toast("Guardado.");
@@ -731,7 +748,6 @@ async function onGuardar(elId) {
     }
 
     delete fotoStaging[elId];
-    await refreshHallazgos();
     state.openEl = null;
     render();
   } catch (err) {
