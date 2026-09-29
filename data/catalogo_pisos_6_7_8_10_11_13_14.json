@@ -2,7 +2,8 @@
   "_nota": "Catalogo generico para pisos 6,7,8,10,11,13,14 (planta tipo digitalizada por Alejandro). Conectado a la app desde 2026-09-17. Este catalogo es un archivo independiente de data/catalogo_planta_tipo2.json (piso 15-16); no lo reemplaza ni lo modifica.",
   "_pendientes_de_confirmar": [
     "Se normalizaron las etiquetas 'ESCALERA' y 'ESCALERA (PUNTO FIJO)' (usadas en M59, M74, M70 como 'comparte con') al nombre real del espacio, 'PUNTO FIJO', para que coincida con el catalogo de Punto Fijo ya creado. Avisar si el nombre correcto del espacio debia ser otro.",
-    "Confirmado por Alejandro: Pasillo, Foso Ascensor y Punto Fijo si necesitan Piso y CieloRaso propios para poder diagnosticarlos (agregados: PISO-PASILLO/CR-PASILLO, PISO-FOSOASCENSOR/CR-FOSOASCENSOR, PISO-PUNTOFIJO/CR-PUNTOFIJO). Falta definir sus areas base (area_base_m2 = null por ahora, no bloqueante para diagnosticar)."
+    "Confirmado por Alejandro: Pasillo, Foso Ascensor y Punto Fijo si necesitan Piso y CieloRaso propios para poder diagnosticarlos (agregados: PISO-PASILLO/CR-PASILLO, PISO-FOSOASCENSOR/CR-FOSOASCENSOR, PISO-PUNTOFIJO/CR-PUNTOFIJO). Falta definir sus areas base (area_base_m2 = null por ahora, no bloqueante para diagnosticar).",
+    "2026-09-18: Verificacion del catalogo contra el DXF re-rotulado por Alejandro (pisos 6,7,8,10,11,13,14). Resuelto: agregados R1 (Rejilla, OF01) y R2 (Rejilla, OF03), que existian en el plano pero faltaban en el catalogo. Confirmado sin cambios en el catalogo: la columna rotulada como COL8 cerca de OF06 en el DXF es en realidad COL6 (error de rotulado en el DXF/AutoCAD de Alejandro, a corregir por el de forma independiente, no afecta este catalogo); los Mesones y Buitrones (BT2, BT3) no quedaron rotulados en el plano pero si existen fisicamente y estan en el catalogo; los elementos Piso/CieloRaso no se rotulan en el plano por diseño; el muro M31 se dejo como un solo elemento cubriendo dos segmentos de muro porque no existe M32 en el catalogo (decision intencional de Alejandro)."
   ],
   "elementos": [
     { "id": "M1",  "tipo": "Muro", "oficina": "OF01", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
@@ -24,6 +25,7 @@
     { "id": "MV1",  "tipo": "MuroVentanaBaño",   "oficina": "OF01", "muro_asociado": null },
     { "id": "COL1", "tipo": "Columna",           "oficina": "OF01" },
     { "id": "MES1", "tipo": "Mesón",             "oficina": "OF01", "profundidad_fija": null },
+    { "id": "R1",   "tipo": "Rejilla",           "oficina": "OF01", "ubicacion": null },
 
     { "id": "PISO-OF01", "tipo": "Piso",      "oficina": "OF01", "area_base_m2": null, "_nota": "area pendiente - se puede usar el area bruta PH (42.07 m2 segun el PDF) mientras se define la neta" },
     { "id": "CR-OF01",   "tipo": "CieloRaso", "oficina": "OF01", "area_base_m2": null },
@@ -62,6 +64,7 @@
     { "id": "AV2",  "tipo": "Antepecho+Ventana", "oficina": "OF03", "muro_asociado": null },
     { "id": "COL3", "tipo": "Columna",           "oficina": "OF03" },
     { "id": "MES3", "tipo": "Mesón",             "oficina": "OF03", "profundidad_fija": null },
+    { "id": "R2",   "tipo": "Rejilla",           "oficina": "OF03", "ubicacion": null },
 
     { "id": "PISO-OF03", "tipo": "Piso",      "oficina": "OF03", "area_base_m2": null, "_nota": "area pendiente - este catalogo es solo para pisos 6,7,8,10,11,13,14: usar el area bruta PH de ESE plano (57.55 m2, NO los 62.79 m2 del plano de pisos 9/12, que es una variante distinta) mientras se define la neta" },
     { "id": "CR-OF03",   "tipo": "CieloRaso", "oficina": "OF03", "area_base_m2": null },

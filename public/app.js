@@ -1,6 +1,6 @@
 // Configuración de la app
 let CATALOGO = [];
-let CATALOGOS = { tipo2: [], bajos: [] };
+let CATALOGOS = { tipo2: [], bajos: [], piso5: [] };
 let REGLAS = {
   bien: { label: "Bien (sin patología)", intervencion: "", capitulo: "", unidad: "", tipo_cantidad: "", cascada: null },
   panete: {
@@ -40,10 +40,12 @@ function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || C
 // Pisos 9 y 12 reutilizan el mismo catalogo "bajos": Alejandro confirmo que la distribucion de espacios
 // es la misma (~88% de coincidencia geometrica tras rotacion) y que no va a hacer catalogo aparte para ellos;
 // solo Oficina 3 y Oficina 4 tienen area distinta y se verifican en sitio, sin requerir cambios de catalogo.
-const PISO_GRUPO = { "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
+// "piso5" = piso 5, catalogo propio e independiente (catalogo_piso5.json) — no comparte planta con ningun otro piso.
+const PISO_GRUPO = { "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
 function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
 
 const PISOS_DISPONIBLES = [
+  { value: "5", label: "Piso 5" },
   { value: "6", label: "Piso 6" },
   { value: "7", label: "Piso 7" },
   { value: "8", label: "Piso 8" },
@@ -60,14 +62,20 @@ const PISOS_DISPONIBLES = [
 const OFICINAS_ORDEN = ["OF501", "OF502", "OF503", "OF504", "OF505", "OF506", "NUCLEO COMUN (ascensores/escalera)", "PUNTO FIJO"];
 const OFICINAS_POR_GRUPO = {
   tipo2: OFICINAS_ORDEN,
-  bajos: ["OF01", "OF02", "OF03", "OF04", "OF05", "OF06", "PASILLO", "FOSO ASCENSOR", "PUNTO FIJO"]
+  bajos: ["OF01", "OF02", "OF03", "OF04", "OF05", "OF06", "PASILLO", "FOSO ASCENSOR", "PUNTO FIJO"],
+  // Piso 5: OF501-OF505 son codigos internos propios de piso 5 (no tienen relacion con los OF501-OF506
+  // de "tipo2" arriba, que son una numeracion interna distinta de la Planta Tipo II de pisos 15-16).
+  piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"]
 };
 function oficinasDeGrupo(grupo) { return OFICINAS_POR_GRUPO[grupo] || OFICINAS_ORDEN; }
 
+const GRUPO_LABELS = {
+  bajos: "Plantas pisos 6, 7, 8, 10, 11, 13 y 14",
+  tipo2: "Planta Tipo II — Pisos 15 y 16",
+  piso5: "Piso 5"
+};
 function grupoLabel(piso) {
-  return grupoDePiso(piso) === "bajos"
-    ? "Plantas pisos 6, 7, 8, 10, 11, 13 y 14"
-    : "Planta Tipo II — Pisos 15 y 16";
+  return GRUPO_LABELS[grupoDePiso(piso)] || GRUPO_LABELS.tipo2;
 }
 
 let hallazgos = [];
@@ -343,16 +351,18 @@ function toast(msg) {
 // Cargar datos
 async function loadData() {
   try {
-    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14)
-    const [catTipo2Res, catBajosRes] = await Promise.all([
+    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5)
+    const [catTipo2Res, catBajosRes, catPiso5Res] = await Promise.all([
       fetchConTimeout('/api/catalogo?grupo=tipo2', {}, 15000),
-      fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000)
+      fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000),
+      fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000)
     ]);
     CATALOGOS.tipo2 = await catTipo2Res.json();
     CATALOGOS.bajos = await catBajosRes.json();
+    CATALOGOS.piso5 = await catPiso5Res.json();
     CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
     safeSetLocalStorage('ccp_cache_catalogos', CATALOGOS);
-    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos`);
+    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos`);
 
     // Cargar configuración
     const confRes = await fetchConTimeout('/api/config', {}, 15000);

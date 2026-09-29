@@ -1,0 +1,973 @@
+{
+  "_nota": "Catalogo de Piso 5 (edificio Camara de Comercio de Pereira). Oficinas internas: OF501-OF505. Zonas comunes: PASILLO, PUNTO FIJO (escaleras), FOSO ASCENSOR. A diferencia de otros pisos, el Buitron NO se cataloga como espacio propio (decision de Alejandro, 2026-09-29): es un hueco conformado por muros de otros elementos. Cada oficina tiene su propio Meson (cocineta). Piso y CieloRaso van en cada espacio EXCEPTO Foso Ascensor. Version corregida 2026-09-29: Alejandro corrigio las colindancias en el Excel origen; M51 confirmado correcto (colinda con 3 zonas); M36 incorporado (antes ausente del Excel).",
+  "_pendientes_de_confirmar": [
+    "Este catalogo se genero a partir del Excel 'muros por oficina y colindancia.xlsx' (hoja Piso 5), donde cada muro compartido aparece listado dos veces (una por cada zona que limita). Se consolido automaticamente a una sola fila oficina+secundaria por muro; verificar los elementos marcados con _nota abajo.",
+    "M20 (Muro, PASILLO): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M21 (Muro, PASILLO): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M22 (Muro, PASILLO): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M51 (Muro, OF505): colinda tambien con FOSO ASCENSOR ademas de PASILLO -- confirmado por Alejandro (2026-09-29) que es correcto, muro de esquina entre tres espacios, NO requiere mas revision.",
+    "M56 (Muro, OF505): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M62 (Muro, OF505): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M64 (Muro, OF505): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M65 (Muro, OF505): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M66 (Muro, PASILLO): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "M72 (Muro, PUNTO FIJO): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV1 (MuroVentanaBaño, OF501): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV2 (MuroVentanaBaño, OF501): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV3 (MuroVentanaBaño, OF502): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV4 (MuroVentanaBaño, OF503): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV5 (MuroVentanaBaño, OF504): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "MV6 (MuroVentanaBaño, OF505): el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+    "C6 (Columna, OF504): columna de esquina, tambien limita con OF505 (el esquema de Columna no tiene campo 'secundaria'; queda anotado aqui para no perder el dato).",
+    "C9 (Columna, OF505): columna de esquina, tambien limita con PUNTO FIJO (el esquema de Columna no tiene campo 'secundaria'; queda anotado aqui para no perder el dato)."
+  ],
+  "elementos": [
+    {
+      "id": "M1",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M2",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M3",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M4",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M5",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M6",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M7",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M8",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M9",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M10",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M11",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M12",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M13",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M14",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M15",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M16",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M17",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M18",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "OF502",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M19",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M20",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M21",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M22",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M23",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M24",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M25",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": "OF503",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M26",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": "OF503",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M27",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M28",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": "OF503",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M29",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": "OF503",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M30",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M31",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M32",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M33",
+      "tipo": "Muro",
+      "oficina": "OF502",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M34",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M35",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M36",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M37",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M38",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M39",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M40",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M41",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M42",
+      "tipo": "Muro",
+      "oficina": "OF503",
+      "secundaria": "OF504",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M43",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M44",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M45",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M46",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M47",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M48",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M49",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M50",
+      "tipo": "Muro",
+      "oficina": "OF504",
+      "secundaria": "OF505",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M51",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "tambien limita con: FOSO ASCENSOR"
+    },
+    {
+      "id": "M52",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M54",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M55",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M56",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M57",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": "PUNTO FIJO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M58",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M59",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M60",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M61",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "OF505",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M62",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M64",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M65",
+      "tipo": "Muro",
+      "oficina": "OF505",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M66",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M67",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M68",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M69",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M70",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M71",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M72",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "M73",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M74",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M75",
+      "tipo": "Muro",
+      "oficina": "OF501",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "V1",
+      "tipo": "Ventana",
+      "oficina": "OF504",
+      "muro_asociado": null
+    },
+    {
+      "id": "V2",
+      "tipo": "Ventana",
+      "oficina": "OF504",
+      "muro_asociado": null
+    },
+    {
+      "id": "V3",
+      "tipo": "Ventana",
+      "oficina": "OF505",
+      "muro_asociado": null
+    },
+    {
+      "id": "V4",
+      "tipo": "Ventana",
+      "oficina": "OF505",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV1",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF502",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV2",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF503",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV3",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF503",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV4",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF503",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV5",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF504",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV6",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF505",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV7",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF505",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV10",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF501",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV1",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF501",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "MV2",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF501",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "MV3",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF502",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "MV4",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF503",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "MV5",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF504",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "MV6",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF505",
+      "muro_asociado": null,
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+    },
+    {
+      "id": "C1",
+      "tipo": "Columna",
+      "oficina": "OF501"
+    },
+    {
+      "id": "C2",
+      "tipo": "Columna",
+      "oficina": "OF501"
+    },
+    {
+      "id": "C3",
+      "tipo": "Columna",
+      "oficina": "OF502"
+    },
+    {
+      "id": "C4",
+      "tipo": "Columna",
+      "oficina": "OF503"
+    },
+    {
+      "id": "C6",
+      "tipo": "Columna",
+      "oficina": "OF504"
+    },
+    {
+      "id": "C7",
+      "tipo": "Columna",
+      "oficina": "OF505"
+    },
+    {
+      "id": "C8",
+      "tipo": "Columna",
+      "oficina": "PASILLO"
+    },
+    {
+      "id": "C9",
+      "tipo": "Columna",
+      "oficina": "OF505"
+    },
+    {
+      "id": "R1",
+      "tipo": "Rejilla",
+      "oficina": "OF504",
+      "ubicacion": null
+    },
+    {
+      "id": "R2",
+      "tipo": "Rejilla",
+      "oficina": "OF505",
+      "ubicacion": null
+    },
+    {
+      "id": "MES1",
+      "tipo": "Mesón",
+      "oficina": "OF501",
+      "profundidad_fija": null
+    },
+    {
+      "id": "MES2",
+      "tipo": "Mesón",
+      "oficina": "OF502",
+      "profundidad_fija": null
+    },
+    {
+      "id": "MES3",
+      "tipo": "Mesón",
+      "oficina": "OF503",
+      "profundidad_fija": null
+    },
+    {
+      "id": "MES4",
+      "tipo": "Mesón",
+      "oficina": "OF504",
+      "profundidad_fija": null
+    },
+    {
+      "id": "MES5",
+      "tipo": "Mesón",
+      "oficina": "OF505",
+      "profundidad_fija": null
+    },
+    {
+      "id": "PISO-OF501",
+      "tipo": "Piso",
+      "oficina": "OF501",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-OF502",
+      "tipo": "Piso",
+      "oficina": "OF502",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-OF503",
+      "tipo": "Piso",
+      "oficina": "OF503",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-OF504",
+      "tipo": "Piso",
+      "oficina": "OF504",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-OF505",
+      "tipo": "Piso",
+      "oficina": "OF505",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-PASILLO",
+      "tipo": "Piso",
+      "oficina": "PASILLO",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-PUNTOFIJO",
+      "tipo": "Piso",
+      "oficina": "PUNTO FIJO",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-OF501",
+      "tipo": "CieloRaso",
+      "oficina": "OF501",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-OF502",
+      "tipo": "CieloRaso",
+      "oficina": "OF502",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-OF503",
+      "tipo": "CieloRaso",
+      "oficina": "OF503",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-OF504",
+      "tipo": "CieloRaso",
+      "oficina": "OF504",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-OF505",
+      "tipo": "CieloRaso",
+      "oficina": "OF505",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-PASILLO",
+      "tipo": "CieloRaso",
+      "oficina": "PASILLO",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-PUNTOFIJO",
+      "tipo": "CieloRaso",
+      "oficina": "PUNTO FIJO",
+      "area_base_m2": null
+    }
+  ]
+}
