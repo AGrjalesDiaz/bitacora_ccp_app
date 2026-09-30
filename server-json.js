@@ -41,7 +41,8 @@ const configFile = path.join(dataDir, 'config.json');
 // "tipo2" = planta tipo pisos 15-16 (catalogo original, sin cambios).
 // "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo nuevo, digitalizado por el ingeniero).
 // "piso5" = piso 5, unico (no comparte planta con ningun otro piso), digitalizado aparte por el ingeniero.
-let catalogos = { tipo2: [], bajos: [], piso5: [] };
+// "piso1" = piso 1, unico (no comparte planta con ningun otro piso), digitalizado aparte por el ingeniero.
+let catalogos = { tipo2: [], bajos: [], piso5: [], piso1: [] };
 try {
   const rawData = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_planta_tipo2.json'), 'utf-8');
   catalogos.tipo2 = JSON.parse(rawData);
@@ -67,6 +68,15 @@ try {
 } catch (err) {
   console.error('Advertencia: no se pudo cargar el catálogo de piso 5:', err.message);
   catalogos.piso5 = [];
+}
+try {
+  const rawPiso1 = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_piso1.json'), 'utf-8');
+  const parsedPiso1 = JSON.parse(rawPiso1);
+  catalogos.piso1 = Array.isArray(parsedPiso1) ? parsedPiso1 : (parsedPiso1.elementos || []);
+  console.log(`✓ Catálogo piso1 cargado: ${catalogos.piso1.length} elementos`);
+} catch (err) {
+  console.error('Advertencia: no se pudo cargar el catálogo de piso 1:', err.message);
+  catalogos.piso1 = [];
 }
 
 // Se mantiene 'catalogo' (tipo2) por compatibilidad con cualquier uso previo del nombre.
@@ -115,7 +125,7 @@ app.put('/api/config/:key', (req, res) => {
 
 app.get('/api/catalogo', (req, res) => {
   // Sin parámetro ?grupo= se mantiene el comportamiento anterior (catálogo tipo2, pisos 15-16).
-  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5') ? req.query.grupo : 'tipo2';
+  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5' || req.query.grupo === 'piso1') ? req.query.grupo : 'tipo2';
   res.json(catalogos[grupo]);
 });
 

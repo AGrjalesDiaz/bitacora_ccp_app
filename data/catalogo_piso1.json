@@ -1,0 +1,1324 @@
+{
+  "_nota": "Catalogo de Piso 1 (edificio Camara de Comercio de Pereira). Aqui los espacios se llaman 'Local' (Local 1 a Local 8 y Local 10 -- no existe Local 9). Zonas comunes: Hall Oficinas, Punto Fijo Escaleras, Foso Ascensor (los 2 ascensores), Escaleras Piso 3. Piso y CieloRaso van en cada espacio EXCEPTO Foso Ascensor. El plano oficial trae la altura de piso a techo impresa por local (h=2.50 a 5.80 m segun el tramo de Local 1, h=3.93 m en Local 2 y el fondo de Local 3, h=3.63 m en la mayoria, h=3.33 m en Zona Servicio dentro de Local 6) -- pendiente decidir si se incorpora como dato de referencia en el catalogo o se deja para la memoria de cantidades. Version inicial 2026-09-30.",
+  "_pendientes_de_confirmar": [
+    "Este catalogo se genero a partir del Excel 'muros por oficina y colindancia.xlsx' (hoja Piso 1), donde cada muro compartido aparece listado dos veces (una por cada zona que limita). Se corrigieron tipeos y se consolido automaticamente a una sola fila oficina+secundaria por muro; verificar los elementos marcados con _nota.",
+    "En Piso 1 los espacios se llaman 'Local' (no 'Oficina'): Local 1 a Local 8 y Local 10 -- NO existe Local 9 en esta planta (confirmado por Alejandro, 2026-09-30). Zonas comunes: Hall Oficinas, Punto Fijo Escaleras, Foso Ascensor, Escaleras Piso 3.",
+    "'Circulacion' se trato igual que 'Fachada' (fachaleta en buen estado, sin intervencion en el muro; el cielo raso de esa zona se evalua aparte, pendiente).",
+    "Muros marcados 'CONSTRUCCION' en el excel original = muro estructural/perimetral (no tiene colindancia interior); se dejaron con secundaria=null y la nota indica el origen del dato.",
+    "M1 (Muro, LOCAL1): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M2 (Muro, LOCAL1): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M3 (Muro, LOCAL1): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M4 (Muro, LOCAL1): tambien limita con: ESCALERAS PISO 3",
+    "M5 (Muro, LOCAL1): tambien limita con: ESCALERAS PISO 3",
+    "M15 (Muro, LOCAL3): colinda con FACHADA (muro exterior)",
+    "M16 (Muro, LOCAL3): colinda con FACHADA (muro exterior)",
+    "M17 (Muro, LOCAL3): colinda con FACHADA (muro exterior)",
+    "M23 (Muro, LOCAL5): muro de fachada (fachaleta) que ademas da contra un buitron (de los varios que tiene el edificio, no el mismo que M24-M29); posible afectacion por lavado del muro, no necesariamente por el sismo -- aclarar causa real en el diagnostico",
+    "M24 (Muro, LOCAL5): da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M25 (Muro, LOCAL5): da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M26 (Muro, LOCAL5): da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M27 (Muro, LOCAL5): da contra el mismo buitron que M28 y M29; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M28 (Muro, LOCAL5): da contra el mismo buitron que M27 y M29; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M29 (Muro, LOCAL5): da contra el mismo buitron que M27 y M28; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro",
+    "M34 (Muro, LOCAL5): da contra un buitron (distinto al de M100)",
+    "M36 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M37 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M38 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M39 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M40 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M44 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M45 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M46 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M50 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M51 (Muro, LOCAL6): colinda con FACHADA (muro exterior)",
+    "M54 (Muro, LOCAL7): tambien limita con: LOCAL 10",
+    "M60 (Muro, LOCAL8): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M61 (Muro, LOCAL8): colinda con FACHADA (muro exterior)",
+    "M62 (Muro, LOCAL8): colinda con FACHADA (muro exterior)",
+    "M63 (Muro, LOCAL10): colinda con CIRCULACION -- fachaleta en buen estado, sin intervencion en el muro (solo evaluar cielo raso aparte)",
+    "M64 (Muro, LOCAL10): colinda con CIRCULACION -- fachaleta en buen estado, sin intervencion en el muro (solo evaluar cielo raso aparte)",
+    "M82 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M83 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M84 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M86 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M87 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M88 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M89 (Muro, LOCAL10): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M96 (Muro, HALL OFICINAS): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M98 (Muro, ESCALERAS PISO 3): marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)",
+    "M100 (Muro, ESCALERAS PISO 3): da contra un buitron (distinto al de M34)",
+    "M101 (Muro, ESCALERAS PISO 3): da contra un buitron",
+    "M108 (Muro, FOSO ASCENSOR): da contra un buitron",
+    "M110 (Muro, LOCAL5): el cuarto de Aseo aqui referenciado pertenece a Escaleras piso 3 (confirmado por Alejandro, 2026-09-30), no es un espacio interno de Local 5",
+    "V1 (Ventana, LOCAL1): colinda con FACHADA (muro exterior)",
+    "V3 (Ventana, LOCAL3): colinda con FACHADA (muro exterior)",
+    "V4 (Ventana, LOCAL4): colinda con FACHADA (muro exterior)",
+    "V5 (Ventana, LOCAL5): colinda con FACHADA (muro exterior)",
+    "V6 (Ventana, LOCAL8): colinda con FACHADA (muro exterior)",
+    "V7 (Ventana, LOCAL7): colinda con FACHADA (muro exterior)",
+    "V8 (Ventana, LOCAL8): colinda con FACHADA (muro exterior)",
+    "MV3 (MuroVentanaBaño, LOCAL6): colinda con FACHADA (muro exterior)",
+    "MV4 (MuroVentanaBaño, LOCAL6): colinda con FACHADA (muro exterior)",
+    "No se incluyeron Mesones en este catalogo (a diferencia de piso 5): Piso 1 son locales comerciales, no se confirmo que cada local tenga cocineta/meson propio -- confirmar con Alejandro si aplica y para cuales locales."
+  ],
+  "elementos": [
+    {
+      "id": "M1",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M2",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M3",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M4",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": "PUNTO FIJO ESCALERAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "tambien limita con: ESCALERAS PISO 3"
+    },
+    {
+      "id": "M5",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": "LOCAL5",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "tambien limita con: ESCALERAS PISO 3"
+    },
+    {
+      "id": "M6",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M7",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M8",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": "LOCAL2",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M9",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": "LOCAL2",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M10",
+      "tipo": "Muro",
+      "oficina": "LOCAL2",
+      "secundaria": "LOCAL3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M11",
+      "tipo": "Muro",
+      "oficina": "LOCAL2",
+      "secundaria": "LOCAL4",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M12",
+      "tipo": "Muro",
+      "oficina": "LOCAL2",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M13",
+      "tipo": "Muro",
+      "oficina": "LOCAL2",
+      "secundaria": "LOCAL5",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M14",
+      "tipo": "Muro",
+      "oficina": "LOCAL2",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M15",
+      "tipo": "Muro",
+      "oficina": "LOCAL3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M16",
+      "tipo": "Muro",
+      "oficina": "LOCAL3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M17",
+      "tipo": "Muro",
+      "oficina": "LOCAL3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M18",
+      "tipo": "Muro",
+      "oficina": "LOCAL3",
+      "secundaria": "LOCAL4",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M19",
+      "tipo": "Muro",
+      "oficina": "LOCAL3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M20",
+      "tipo": "Muro",
+      "oficina": "LOCAL4",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M21",
+      "tipo": "Muro",
+      "oficina": "LOCAL4",
+      "secundaria": "LOCAL5",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M22",
+      "tipo": "Muro",
+      "oficina": "LOCAL4",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M23",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "muro de fachada (fachaleta) que ademas da contra un buitron (de los varios que tiene el edificio, no el mismo que M24-M29); posible afectacion por lavado del muro, no necesariamente por el sismo -- aclarar causa real en el diagnostico"
+    },
+    {
+      "id": "M24",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M25",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M26",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M27",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra el mismo buitron que M28 y M29; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M28",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra el mismo buitron que M27 y M29; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M29",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra el mismo buitron que M27 y M28; si se ve afectado, para efectos de cantidades solo se analiza una cara del muro"
+    },
+    {
+      "id": "M30",
+      "tipo": "Muro",
+      "oficina": "LOCAL1",
+      "secundaria": "LOCAL5",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M31",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M32",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M33",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": "PUNTO FIJO ESCALERAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M34",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron (distinto al de M100)"
+    },
+    {
+      "id": "M35",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M36",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M37",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M38",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M39",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M40",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M41",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M42",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M43",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M44",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M45",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M46",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M48",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M49",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M50",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M51",
+      "tipo": "Muro",
+      "oficina": "LOCAL6",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M52",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": "LOCAL10",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M53",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": "LOCAL10",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M54",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": "LOCAL8",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "tambien limita con: LOCAL 10"
+    },
+    {
+      "id": "M55",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": "LOCAL8",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M56",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": "LOCAL8",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M57",
+      "tipo": "Muro",
+      "oficina": "LOCAL7",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M58",
+      "tipo": "Muro",
+      "oficina": "LOCAL8",
+      "secundaria": "LOCAL10",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M59",
+      "tipo": "Muro",
+      "oficina": "LOCAL8",
+      "secundaria": "LOCAL10",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M60",
+      "tipo": "Muro",
+      "oficina": "LOCAL8",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M61",
+      "tipo": "Muro",
+      "oficina": "LOCAL8",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M62",
+      "tipo": "Muro",
+      "oficina": "LOCAL8",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "M63",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con CIRCULACION -- fachaleta en buen estado, sin intervencion en el muro (solo evaluar cielo raso aparte)"
+    },
+    {
+      "id": "M64",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "colinda con CIRCULACION -- fachaleta en buen estado, sin intervencion en el muro (solo evaluar cielo raso aparte)"
+    },
+    {
+      "id": "M65",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M66",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M67",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M68",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M69",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M70",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M71",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M72",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M73",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M74",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M75",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M76",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M77",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M78",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M79",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M80",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M81",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M82",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M83",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M84",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M86",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M87",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M88",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M89",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M90",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M91",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M92",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M93",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M94",
+      "tipo": "Muro",
+      "oficina": "LOCAL10",
+      "secundaria": "HALL OFICINAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M95",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M96",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M97",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M98",
+      "tipo": "Muro",
+      "oficina": "ESCALERAS PISO 3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "marcado como 'CONSTRUCCION' en el excel (muro estructural/perimetral)"
+    },
+    {
+      "id": "M99",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M100",
+      "tipo": "Muro",
+      "oficina": "ESCALERAS PISO 3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron (distinto al de M34)"
+    },
+    {
+      "id": "M101",
+      "tipo": "Muro",
+      "oficina": "ESCALERAS PISO 3",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron"
+    },
+    {
+      "id": "M102",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "PUNTO FIJO ESCALERAS",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M103",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO ESCALERAS",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M104",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO ESCALERAS",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M105",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M106",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M107",
+      "tipo": "Muro",
+      "oficina": "HALL OFICINAS",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null
+    },
+    {
+      "id": "M108",
+      "tipo": "Muro",
+      "oficina": "FOSO ASCENSOR",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "da contra un buitron"
+    },
+    {
+      "id": "M110",
+      "tipo": "Muro",
+      "oficina": "LOCAL5",
+      "secundaria": "ESCALERAS PISO 3",
+      "altura_fija": null,
+      "longitud_m": null,
+      "espesor_m": null,
+      "_nota": "el cuarto de Aseo aqui referenciado pertenece a Escaleras piso 3 (confirmado por Alejandro, 2026-09-30), no es un espacio interno de Local 5"
+    },
+    {
+      "id": "V1",
+      "tipo": "Ventana",
+      "oficina": "LOCAL1",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V2",
+      "tipo": "Ventana",
+      "oficina": "LOCAL2",
+      "muro_asociado": null
+    },
+    {
+      "id": "V3",
+      "tipo": "Ventana",
+      "oficina": "LOCAL3",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V4",
+      "tipo": "Ventana",
+      "oficina": "LOCAL4",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V5",
+      "tipo": "Ventana",
+      "oficina": "LOCAL5",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V6",
+      "tipo": "Ventana",
+      "oficina": "LOCAL8",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V7",
+      "tipo": "Ventana",
+      "oficina": "LOCAL7",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "V8",
+      "tipo": "Ventana",
+      "oficina": "LOCAL8",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "MV1",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "LOCAL1",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV2",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "LOCAL2",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV3",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "LOCAL6",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "MV4",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "LOCAL6",
+      "muro_asociado": null,
+      "_nota": "colinda con FACHADA (muro exterior)"
+    },
+    {
+      "id": "C1",
+      "tipo": "Columna",
+      "oficina": "LOCAL10"
+    },
+    {
+      "id": "C3",
+      "tipo": "Columna",
+      "oficina": "LOCAL6"
+    },
+    {
+      "id": "C6",
+      "tipo": "Columna",
+      "oficina": "LOCAL4"
+    },
+    {
+      "id": "C7",
+      "tipo": "Columna",
+      "oficina": "LOCAL1"
+    },
+    {
+      "id": "C8",
+      "tipo": "Columna",
+      "oficina": "HALL OFICINAS"
+    },
+    {
+      "id": "PISO-LOCAL1",
+      "tipo": "Piso",
+      "oficina": "LOCAL1",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL2",
+      "tipo": "Piso",
+      "oficina": "LOCAL2",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL3",
+      "tipo": "Piso",
+      "oficina": "LOCAL3",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL4",
+      "tipo": "Piso",
+      "oficina": "LOCAL4",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL5",
+      "tipo": "Piso",
+      "oficina": "LOCAL5",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL6",
+      "tipo": "Piso",
+      "oficina": "LOCAL6",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL7",
+      "tipo": "Piso",
+      "oficina": "LOCAL7",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL8",
+      "tipo": "Piso",
+      "oficina": "LOCAL8",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-LOCAL10",
+      "tipo": "Piso",
+      "oficina": "LOCAL10",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-HALLOFICINAS",
+      "tipo": "Piso",
+      "oficina": "HALL OFICINAS",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-PUNTOFIJOESCALERAS",
+      "tipo": "Piso",
+      "oficina": "PUNTO FIJO ESCALERAS",
+      "area_base_m2": null
+    },
+    {
+      "id": "PISO-ESCALERASPISO3",
+      "tipo": "Piso",
+      "oficina": "ESCALERAS PISO 3",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL1",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL1",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL2",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL2",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL3",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL3",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL4",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL4",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL5",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL5",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL6",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL6",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL7",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL7",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL8",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL8",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-LOCAL10",
+      "tipo": "CieloRaso",
+      "oficina": "LOCAL10",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-HALLOFICINAS",
+      "tipo": "CieloRaso",
+      "oficina": "HALL OFICINAS",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-PUNTOFIJOESCALERAS",
+      "tipo": "CieloRaso",
+      "oficina": "PUNTO FIJO ESCALERAS",
+      "area_base_m2": null
+    },
+    {
+      "id": "CR-ESCALERASPISO3",
+      "tipo": "CieloRaso",
+      "oficina": "ESCALERAS PISO 3",
+      "area_base_m2": null
+    }
+  ]
+}

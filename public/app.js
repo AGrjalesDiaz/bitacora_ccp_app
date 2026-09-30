@@ -1,6 +1,6 @@
 // Configuración de la app
 let CATALOGO = [];
-let CATALOGOS = { tipo2: [], bajos: [], piso5: [] };
+let CATALOGOS = { tipo2: [], bajos: [], piso5: [], piso1: [] };
 let REGLAS = {
   bien: { label: "Bien (sin patología)", intervencion: "", capitulo: "", unidad: "", tipo_cantidad: "", cascada: null },
   panete: {
@@ -41,10 +41,13 @@ function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || C
 // es la misma (~88% de coincidencia geometrica tras rotacion) y que no va a hacer catalogo aparte para ellos;
 // solo Oficina 3 y Oficina 4 tienen area distinta y se verifican en sitio, sin requerir cambios de catalogo.
 // "piso5" = piso 5, catalogo propio e independiente (catalogo_piso5.json) — no comparte planta con ningun otro piso.
-const PISO_GRUPO = { "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
+// "piso1" = piso 1, catalogo propio e independiente (catalogo_piso1.json) — no comparte planta con ningun otro piso.
+// Aqui los espacios se llaman "Local" (Local 1 a Local 8 y Local 10 — no existe Local 9 en esta planta).
+const PISO_GRUPO = { "1": "piso1", "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
 function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
 
 const PISOS_DISPONIBLES = [
+  { value: "1", label: "Piso 1" },
   { value: "5", label: "Piso 5" },
   { value: "6", label: "Piso 6" },
   { value: "7", label: "Piso 7" },
@@ -65,14 +68,18 @@ const OFICINAS_POR_GRUPO = {
   bajos: ["OF01", "OF02", "OF03", "OF04", "OF05", "OF06", "PASILLO", "FOSO ASCENSOR", "PUNTO FIJO"],
   // Piso 5: OF501-OF505 son codigos internos propios de piso 5 (no tienen relacion con los OF501-OF506
   // de "tipo2" arriba, que son una numeracion interna distinta de la Planta Tipo II de pisos 15-16).
-  piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"]
+  piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"],
+  // Piso 1: locales comerciales (Local 1-8 y Local 10; no existe Local 9) + zonas comunes propias de esta planta.
+  piso1: ["LOCAL1", "LOCAL2", "LOCAL3", "LOCAL4", "LOCAL5", "LOCAL6", "LOCAL7", "LOCAL8", "LOCAL10",
+    "HALL OFICINAS", "PUNTO FIJO ESCALERAS", "FOSO ASCENSOR", "ESCALERAS PISO 3"]
 };
 function oficinasDeGrupo(grupo) { return OFICINAS_POR_GRUPO[grupo] || OFICINAS_ORDEN; }
 
 const GRUPO_LABELS = {
   bajos: "Plantas pisos 6, 7, 8, 10, 11, 13 y 14",
   tipo2: "Planta Tipo II — Pisos 15 y 16",
-  piso5: "Piso 5"
+  piso5: "Piso 5",
+  piso1: "Piso 1"
 };
 function grupoLabel(piso) {
   return GRUPO_LABELS[grupoDePiso(piso)] || GRUPO_LABELS.tipo2;
@@ -95,6 +102,8 @@ function numeroOficina(o) {
   if (m) return m[1];
   m = /^OF0(\d)$/.exec(o);
   if (m) return m[1];
+  m = /^LOCAL(\d+)$/.exec(o);
+  if (m) return m[1];
   return null;
 }
 // Código de espacio que usan los técnicos en el edificio: 1501-1506 (piso 15), 1601-1606 (piso 16), 601-606 (piso 6), etc.
@@ -105,6 +114,9 @@ function codigoEspacio() {
   if (state.oficina === "PUNTO FIJO") return "PF" + state.piso;
   if (state.oficina === "PASILLO") return "PS" + state.piso;
   if (state.oficina === "FOSO ASCENSOR") return "FA" + state.piso;
+  if (state.oficina === "HALL OFICINAS") return "HO" + state.piso;
+  if (state.oficina === "PUNTO FIJO ESCALERAS") return "PFE" + state.piso;
+  if (state.oficina === "ESCALERAS PISO 3") return "EP3" + state.piso;
   return "P" + state.piso + "-" + state.oficina;
 }
 function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
@@ -112,12 +124,17 @@ function esc(s) { return (s == null ? "" : String(s)).replace(/[&<>"]/g, c => ({
 
 function ofLabel(o, piso) {
   piso = piso || state.piso;
+  const mLocal = /^LOCAL(\d+)$/.exec(o);
+  if (mLocal) return "Local " + mLocal[1];
   const n = numeroOficina(o);
   if (n) return "Oficina " + piso + "0" + n;
   if (o === "NUCLEO COMUN (ascensores/escalera)") return "Núcleo común (ascensores/escalera)";
   if (o === "PUNTO FIJO") return grupoDePiso(piso) === "tipo2" ? "Punto fijo (pendiente de levantamiento)" : "Punto fijo";
   if (o === "PASILLO") return "Pasillo";
   if (o === "FOSO ASCENSOR") return "Foso ascensor";
+  if (o === "HALL OFICINAS") return "Hall oficinas";
+  if (o === "PUNTO FIJO ESCALERAS") return "Punto fijo (escaleras)";
+  if (o === "ESCALERAS PISO 3") return "Escaleras a piso 3";
   return o;
 }
 
@@ -351,18 +368,20 @@ function toast(msg) {
 // Cargar datos
 async function loadData() {
   try {
-    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5)
-    const [catTipo2Res, catBajosRes, catPiso5Res] = await Promise.all([
+    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5, piso1 = piso 1)
+    const [catTipo2Res, catBajosRes, catPiso5Res, catPiso1Res] = await Promise.all([
       fetchConTimeout('/api/catalogo?grupo=tipo2', {}, 15000),
       fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000),
-      fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000)
+      fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000),
+      fetchConTimeout('/api/catalogo?grupo=piso1', {}, 15000)
     ]);
     CATALOGOS.tipo2 = await catTipo2Res.json();
     CATALOGOS.bajos = await catBajosRes.json();
     CATALOGOS.piso5 = await catPiso5Res.json();
+    CATALOGOS.piso1 = await catPiso1Res.json();
     CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
     safeSetLocalStorage('ccp_cache_catalogos', CATALOGOS);
-    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos`);
+    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos · Catálogo piso1: ${CATALOGOS.piso1.length} elementos`);
 
     // Cargar configuración
     const confRes = await fetchConTimeout('/api/config', {}, 15000);
