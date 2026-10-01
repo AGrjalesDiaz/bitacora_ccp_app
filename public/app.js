@@ -1,6 +1,6 @@
 // Configuración de la app
 let CATALOGO = [];
-let CATALOGOS = { tipo2: [], bajos: [], piso5: [], piso1: [] };
+let CATALOGOS = { tipo2: [], bajos: [], piso5: [] };
 let REGLAS = {
   bien: { label: "Bien (sin patología)", intervencion: "", capitulo: "", unidad: "", tipo_cantidad: "", cascada: null },
   panete: {
@@ -25,8 +25,12 @@ let REGLAS = {
 
 const PISO_MATERIALES = ["Mármol", "Porcelanato", "Cerámica", "Laminado SPC", "Otro"];
 const ENCHAPE_MATERIALES = ["Mármol", "Granito", "Acero inoxidable", "Cerámica", "Otro"];
-const CIELO_RASO_TIPO = { "15": "Pañete + Estuco + Pintura (sobre torta inferior de placa)", "16": "Drywall" };
+// Piso 5 confirmado por Alejandro (2026-10-01): mismo sistema que piso 15 —
+// estuco y pintura sobre pañete, aplicado directamente sobre la torta
+// inferior de la placa (NO es un sistema suspendido).
+const CIELO_RASO_TIPO = { "5": "Pañete + Estuco + Pintura (sobre torta inferior de placa)", "15": "Pañete + Estuco + Pintura (sobre torta inferior de placa)", "16": "Drywall" };
 const CIELO_RASO_INTERVENCION = {
+  "5": "Picar pañete afectado y rehacer pañete + estuco + pintura desde cero",
   "15": "Picar pañete afectado y rehacer pañete + estuco + pintura desde cero",
   "16": "Retiro y reposición de paneles de drywall afectados (nota: regla asumida, validar con criterio del ingeniero)"
 };
@@ -41,13 +45,10 @@ function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || C
 // es la misma (~88% de coincidencia geometrica tras rotacion) y que no va a hacer catalogo aparte para ellos;
 // solo Oficina 3 y Oficina 4 tienen area distinta y se verifican en sitio, sin requerir cambios de catalogo.
 // "piso5" = piso 5, catalogo propio e independiente (catalogo_piso5.json) — no comparte planta con ningun otro piso.
-// "piso1" = piso 1, catalogo propio e independiente (catalogo_piso1.json) — no comparte planta con ningun otro piso.
-// Aqui los espacios se llaman "Local" (Local 1 a Local 8 y Local 10 — no existe Local 9 en esta planta).
-const PISO_GRUPO = { "1": "piso1", "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
+const PISO_GRUPO = { "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
 function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
 
 const PISOS_DISPONIBLES = [
-  { value: "1", label: "Piso 1" },
   { value: "5", label: "Piso 5" },
   { value: "6", label: "Piso 6" },
   { value: "7", label: "Piso 7" },
@@ -68,18 +69,14 @@ const OFICINAS_POR_GRUPO = {
   bajos: ["OF01", "OF02", "OF03", "OF04", "OF05", "OF06", "PASILLO", "FOSO ASCENSOR", "PUNTO FIJO"],
   // Piso 5: OF501-OF505 son codigos internos propios de piso 5 (no tienen relacion con los OF501-OF506
   // de "tipo2" arriba, que son una numeracion interna distinta de la Planta Tipo II de pisos 15-16).
-  piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"],
-  // Piso 1: locales comerciales (Local 1-8 y Local 10; no existe Local 9) + zonas comunes propias de esta planta.
-  piso1: ["LOCAL1", "LOCAL2", "LOCAL3", "LOCAL4", "LOCAL5", "LOCAL6", "LOCAL7", "LOCAL8", "LOCAL10",
-    "HALL OFICINAS", "PUNTO FIJO ESCALERAS", "FOSO ASCENSOR", "ESCALERAS PISO 3"]
+  piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"]
 };
 function oficinasDeGrupo(grupo) { return OFICINAS_POR_GRUPO[grupo] || OFICINAS_ORDEN; }
 
 const GRUPO_LABELS = {
   bajos: "Plantas pisos 6, 7, 8, 10, 11, 13 y 14",
   tipo2: "Planta Tipo II — Pisos 15 y 16",
-  piso5: "Piso 5",
-  piso1: "Piso 1"
+  piso5: "Piso 5"
 };
 function grupoLabel(piso) {
   return GRUPO_LABELS[grupoDePiso(piso)] || GRUPO_LABELS.tipo2;
@@ -102,8 +99,6 @@ function numeroOficina(o) {
   if (m) return m[1];
   m = /^OF0(\d)$/.exec(o);
   if (m) return m[1];
-  m = /^LOCAL(\d+)$/.exec(o);
-  if (m) return m[1];
   return null;
 }
 // Código de espacio que usan los técnicos en el edificio: 1501-1506 (piso 15), 1601-1606 (piso 16), 601-606 (piso 6), etc.
@@ -114,9 +109,6 @@ function codigoEspacio() {
   if (state.oficina === "PUNTO FIJO") return "PF" + state.piso;
   if (state.oficina === "PASILLO") return "PS" + state.piso;
   if (state.oficina === "FOSO ASCENSOR") return "FA" + state.piso;
-  if (state.oficina === "HALL OFICINAS") return "HO" + state.piso;
-  if (state.oficina === "PUNTO FIJO ESCALERAS") return "PFE" + state.piso;
-  if (state.oficina === "ESCALERAS PISO 3") return "EP3" + state.piso;
   return "P" + state.piso + "-" + state.oficina;
 }
 function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
@@ -124,17 +116,12 @@ function esc(s) { return (s == null ? "" : String(s)).replace(/[&<>"]/g, c => ({
 
 function ofLabel(o, piso) {
   piso = piso || state.piso;
-  const mLocal = /^LOCAL(\d+)$/.exec(o);
-  if (mLocal) return "Local " + mLocal[1];
   const n = numeroOficina(o);
   if (n) return "Oficina " + piso + "0" + n;
   if (o === "NUCLEO COMUN (ascensores/escalera)") return "Núcleo común (ascensores/escalera)";
   if (o === "PUNTO FIJO") return grupoDePiso(piso) === "tipo2" ? "Punto fijo (pendiente de levantamiento)" : "Punto fijo";
   if (o === "PASILLO") return "Pasillo";
   if (o === "FOSO ASCENSOR") return "Foso ascensor";
-  if (o === "HALL OFICINAS") return "Hall oficinas";
-  if (o === "PUNTO FIJO ESCALERAS") return "Punto fijo (escaleras)";
-  if (o === "ESCALERAS PISO 3") return "Escaleras a piso 3";
   return o;
 }
 
@@ -368,20 +355,18 @@ function toast(msg) {
 // Cargar datos
 async function loadData() {
   try {
-    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5, piso1 = piso 1)
-    const [catTipo2Res, catBajosRes, catPiso5Res, catPiso1Res] = await Promise.all([
+    // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5)
+    const [catTipo2Res, catBajosRes, catPiso5Res] = await Promise.all([
       fetchConTimeout('/api/catalogo?grupo=tipo2', {}, 15000),
       fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000),
-      fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000),
-      fetchConTimeout('/api/catalogo?grupo=piso1', {}, 15000)
+      fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000)
     ]);
     CATALOGOS.tipo2 = await catTipo2Res.json();
     CATALOGOS.bajos = await catBajosRes.json();
     CATALOGOS.piso5 = await catPiso5Res.json();
-    CATALOGOS.piso1 = await catPiso1Res.json();
     CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
     safeSetLocalStorage('ccp_cache_catalogos', CATALOGOS);
-    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos · Catálogo piso1: ${CATALOGOS.piso1.length} elementos`);
+    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos`);
 
     // Cargar configuración
     const confRes = await fetchConTimeout('/api/config', {}, 15000);
@@ -707,7 +692,10 @@ function renderFicha() {
   </div>`;
   const fotos = hs.flatMap(h => (h.fotos || []).map(f => ({ f, el: h.codigo_elemento })));
   return `${h1}<div class="card">
-    <h3 style="margin:0 0 4px">Ficha técnica — ${esc(cod)}</h3>
+    <div class="row" style="justify-content:space-between;align-items:center">
+      <h3 style="margin:0 0 4px">Ficha técnica — ${esc(cod)}</h3>
+      <button class="btn" id="btnExportFicha">Exportar ficha (Excel)</button>
+    </div>
     <div style="font-size:12px;color:var(--text-dim);margin-bottom:10px">Cámara de Comercio de Pereira · ${esc(grupoLabel(state.piso))}</div>
     ${stat}
     <div class="grupo-title">Hallazgos "Afectado"</div>
@@ -775,6 +763,8 @@ function wireEvents() {
   if (btnEs) btnEs.onclick = () => exportCSV("sabana");
   const btnEm = document.getElementById("btnExportMemoria");
   if (btnEm) btnEm.onclick = () => exportCSV("memoria");
+  const btnEf = document.getElementById("btnExportFicha");
+  if (btnEf) btnEf.onclick = () => exportFicha();
 
   const umbralGuardar = document.getElementById("umbralGuardar");
   if (umbralGuardar) umbralGuardar.onclick = async () => {
@@ -924,7 +914,7 @@ async function onGuardar(elId) {
     doc.unidad = "m²";
     doc.tipo_sistema = cieloRasoTipo(state.piso);
     doc.intervencion = doc.estado === "Afectado" ? cieloRasoIntervencion(state.piso) : "";
-    doc.capitulo = state.piso === "15" ? "1.5 Cielo raso — Pañete, estuco y pintura"
+    doc.capitulo = (state.piso === "15" || state.piso === "5") ? "1.5 Cielo raso — Pañete, estuco y pintura"
       : state.piso === "16" ? "1.6 Cielo raso — Drywall"
       : "1.5/1.6 Cielo raso — Sistema por definir (pendiente confirmar con el ingeniero)";
   } else if (el.tipo === "Buitron") {
@@ -1072,6 +1062,27 @@ async function exportCSV(kind) {
   } catch (err) {
     console.error('Error exportando:', err);
     toast('Error exportando: ' + err.message);
+  }
+}
+
+async function exportFicha() {
+  try {
+    const grupo = grupoDePiso(state.piso);
+    const url = `/api/export/ficha/${encodeURIComponent(state.oficina)}?piso=${encodeURIComponent(state.piso)}&grupo=${encodeURIComponent(grupo)}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Error ${res.status}`);
+    }
+    const blob = await res.blob();
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `Ficha_${state.oficina}.xlsx`;
+    link.click();
+    toast("Ficha descargada.");
+  } catch (err) {
+    console.error('Error exportando ficha:', err);
+    toast('Error exportando ficha: ' + err.message);
   }
 }
 

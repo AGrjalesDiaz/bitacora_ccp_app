@@ -4,6 +4,7 @@ const fs = require('fs');
 const cors = require('cors');
 const multer = require('multer');
 const sharp = require('sharp');
+const { buildFichaWorkbook } = require('./lib/fichaExport');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -28,6 +29,13 @@ if (!fs.existsSync(fotosDir)) fs.mkdirSync(fotosDir, { recursive: true });
 console.log(`✓ Guardando fotos en: ${fotosDir}`);
 app.use('/fotos', express.static(fotosDir));
 
+// Carpeta de planos por oficina/espacio — imágenes fijas que suben desde el
+// repositorio (como los catálogos), no se escriben en tiempo de ejecución.
+// Convención de nombre: data/planos/<CODIGO_DE_OFICINA>.png (o .jpg), donde
+// <CODIGO_DE_OFICINA> es el mismo código interno del catálogo (ej. OF502).
+const planosDir = path.join(__dirname, 'data', 'planos');
+if (!fs.existsSync(planosDir)) fs.mkdirSync(planosDir, { recursive: true });
+
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 15 * 1024 * 1024 } // 15MB por foto antes de comprimir
@@ -41,8 +49,7 @@ const configFile = path.join(dataDir, 'config.json');
 // "tipo2" = planta tipo pisos 15-16 (catalogo original, sin cambios).
 // "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo nuevo, digitalizado por el ingeniero).
 // "piso5" = piso 5, unico (no comparte planta con ningun otro piso), digitalizado aparte por el ingeniero.
-// "piso1" = piso 1, unico (no comparte planta con ningun otro piso), digitalizado aparte por el ingeniero.
-let catalogos = { tipo2: [], bajos: [], piso5: [], piso1: [] };
+let catalogos = { tipo2: [], bajos: [], piso5: [] };
 try {
   const rawData = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_planta_tipo2.json'), 'utf-8');
   catalogos.tipo2 = JSON.parse(rawData);
@@ -68,15 +75,6 @@ try {
 } catch (err) {
   console.error('Advertencia: no se pudo cargar el catálogo de piso 5:', err.message);
   catalogos.piso5 = [];
-}
-try {
-  const rawPiso1 = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_piso1.json'), 'utf-8');
-  const parsedPiso1 = JSON.parse(rawPiso1);
-  catalogos.piso1 = Array.isArray(parsedPiso1) ? parsedPiso1 : (parsedPiso1.elementos || []);
-  console.log(`✓ Catálogo piso1 cargado: ${catalogos.piso1.length} elementos`);
-} catch (err) {
-  console.error('Advertencia: no se pudo cargar el catálogo de piso 1:', err.message);
-  catalogos.piso1 = [];
 }
 
 // Se mantiene 'catalogo' (tipo2) por compatibilidad con cualquier uso previo del nombre.
@@ -125,7 +123,7 @@ app.put('/api/config/:key', (req, res) => {
 
 app.get('/api/catalogo', (req, res) => {
   // Sin parámetro ?grupo= se mantiene el comportamiento anterior (catálogo tipo2, pisos 15-16).
-  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5' || req.query.grupo === 'piso1') ? req.query.grupo : 'tipo2';
+  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5') ? req.query.grupo : 'tipo2';
   res.json(catalogos[grupo]);
 });
 
@@ -239,6 +237,36 @@ app.get('/api/export/memoria', (req, res) => {
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', 'attachment; filename=memoria_cantidades_ccp.csv');
   res.send(csv);
+});
+
+// GET /api/export/ficha/:oficina?piso=5&grupo=piso5
+// Genera al instante la "Ficha técnica de espacio" (.xlsx) de una oficina/
+// espacio puntual, con el catálogo + hallazgos YA capturados en esta misma
+// app (no se redacta contenido de ingeniería nuevo) + el plano de esa
+// oficina si ya fue subido a data/planos/<oficina>.png.
+app.get('/api/export/ficha/:oficina', async (req, res) => {
+  const { oficina } = req.params;
+  const piso = req.query.piso;
+  const grupo = req.query.grupo;
+  if (!piso || !grupo) {
+    return res.status(400).json({ error: 'Faltan parámetros: piso y grupo son obligatorios (ej. ?piso=5&grupo=piso5)' });
+  }
+  const catalogoGrupo = catalogos[grupo];
+  if (!catalogoGrupo) {
+    return res.status(400).json({ error: `Grupo de catálogo desconocido: ${grupo}` });
+  }
+  try {
+    const wb = await buildFichaWorkbook({
+      oficina, piso, catalogo: catalogoGrupo, hallazgos, fotosDir, planosDir,
+    });
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.setHeader('Content-Disposition', `attachment; filename="Ficha_${oficina}.xlsx"`);
+    await wb.xlsx.write(res);
+    res.end();
+  } catch (err) {
+    console.error('Error generando ficha:', err);
+    res.status(err.status || 500).json({ error: err.message });
+  }
 });
 
 app.get('/api/health', (req, res) => {

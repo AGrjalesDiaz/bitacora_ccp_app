@@ -1,0 +1,22 @@
+Convención para los planos de cada oficina/espacio
+====================================================
+
+Guarda aquí la imagen del plano de cada espacio (exportada desde el CAD,
+con los muros y elementos ya rotulados con su código: M1, M2, V1, AV1, etc.)
+usando exactamente el código del espacio como nombre de archivo:
+
+  OF502.png
+  OF503.png
+  OF505.jpg
+
+Formatos aceptados: .png, .jpg, .jpeg
+
+Cuando el técnico exporte la ficha de un espacio desde la app
+("Exportar ficha (Excel)"), el sistema busca automáticamente el archivo
+que coincide con el código del espacio en esta carpeta y lo incluye en
+la ficha. Si no encuentra el archivo, la ficha se genera igual pero
+indica "Plano no disponible todavía para esta oficina."
+
+No hace falta avisarle a nadie ni reiniciar la app: basta con subir el
+archivo aquí (y hacer commit + push al repositorio) para que quede
+disponible la próxima vez que se exporte esa ficha.
