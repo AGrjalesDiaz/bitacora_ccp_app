@@ -28,7 +28,7 @@
       "oficina": "OF501",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.67,
       "espesor_m": null
     },
     {
@@ -37,7 +37,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.2,
       "espesor_m": null
     },
     {
@@ -46,7 +46,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.62,
       "espesor_m": null
     },
     {
@@ -55,7 +55,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.7,
       "espesor_m": null
     },
     {
@@ -64,7 +64,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.5,
       "espesor_m": null
     },
     {
@@ -73,7 +73,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.51,
       "espesor_m": null
     },
     {
@@ -82,7 +82,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.2,
       "espesor_m": null
     },
     {
@@ -91,7 +91,7 @@
       "oficina": "OF501",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.7,
       "espesor_m": null
     },
     {
@@ -100,7 +100,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.49,
       "espesor_m": null
     },
     {
@@ -109,7 +109,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.86,
       "espesor_m": null
     },
     {
@@ -118,7 +118,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.11,
       "espesor_m": null
     },
     {
@@ -127,7 +127,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.13,
       "espesor_m": null
     },
     {
@@ -136,7 +136,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 4.8,
       "espesor_m": null
     },
     {
@@ -145,7 +145,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.97,
       "espesor_m": null
     },
     {
@@ -154,7 +154,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.9,
       "espesor_m": null
     },
     {
@@ -163,7 +163,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 4.02,
       "espesor_m": null
     },
     {
@@ -172,7 +172,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.39,
       "espesor_m": null
     },
     {
@@ -181,7 +181,7 @@
       "oficina": "OF501",
       "secundaria": "OF502",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 4.9,
       "espesor_m": null
     },
     {
@@ -190,7 +190,7 @@
       "oficina": "OF501",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3.76,
       "espesor_m": null
     },
     {
@@ -199,7 +199,7 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.4,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -209,7 +209,7 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.1,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -219,7 +219,7 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.1,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -229,7 +229,7 @@
       "oficina": "OF502",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.45,
       "espesor_m": null
     },
     {
@@ -238,7 +238,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.51,
       "espesor_m": null
     },
     {
@@ -247,7 +247,7 @@
       "oficina": "OF502",
       "secundaria": "OF503",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.93,
       "espesor_m": null
     },
     {
@@ -256,7 +256,7 @@
       "oficina": "OF502",
       "secundaria": "OF503",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.62,
       "espesor_m": null
     },
     {
@@ -265,7 +265,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.7,
       "espesor_m": null
     },
     {
@@ -274,7 +274,7 @@
       "oficina": "OF502",
       "secundaria": "OF503",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.58,
       "espesor_m": null
     },
     {
@@ -283,7 +283,7 @@
       "oficina": "OF502",
       "secundaria": "OF503",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3,
       "espesor_m": null
     },
     {
@@ -292,7 +292,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.2,
       "espesor_m": null
     },
     {
@@ -301,7 +301,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.9,
       "espesor_m": null
     },
     {
@@ -310,7 +310,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.46,
       "espesor_m": null
     },
     {
@@ -319,7 +319,7 @@
       "oficina": "OF502",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3.98,
       "espesor_m": null
     },
     {
@@ -328,7 +328,7 @@
       "oficina": "OF503",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.97,
       "espesor_m": null
     },
     {
@@ -337,7 +337,7 @@
       "oficina": "OF503",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.12,
       "espesor_m": null
     },
     {
@@ -346,7 +346,7 @@
       "oficina": "OF503",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.96,
       "espesor_m": null
     },
     {
@@ -355,7 +355,7 @@
       "oficina": "OF503",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.1,
       "espesor_m": null
     },
     {
@@ -364,7 +364,7 @@
       "oficina": "OF503",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.51,
       "espesor_m": null
     },
     {
@@ -373,7 +373,7 @@
       "oficina": "OF503",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.66,
       "espesor_m": null
     },
     {
@@ -382,7 +382,7 @@
       "oficina": "OF503",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 4.76,
       "espesor_m": null
     },
     {
@@ -391,7 +391,7 @@
       "oficina": "OF503",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.72,
       "espesor_m": null
     },
     {
@@ -400,7 +400,7 @@
       "oficina": "OF503",
       "secundaria": "OF504",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 5.33,
       "espesor_m": null
     },
     {
@@ -409,7 +409,7 @@
       "oficina": "OF504",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.25,
       "espesor_m": null
     },
     {
@@ -418,7 +418,7 @@
       "oficina": "OF504",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3.34,
       "espesor_m": null
     },
     {
@@ -427,7 +427,7 @@
       "oficina": "OF504",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.68,
       "espesor_m": null
     },
     {
@@ -436,7 +436,7 @@
       "oficina": "OF504",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.67,
       "espesor_m": null
     },
     {
@@ -445,7 +445,7 @@
       "oficina": "OF504",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.68,
       "espesor_m": null
     },
     {
@@ -454,7 +454,7 @@
       "oficina": "OF504",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.14,
       "espesor_m": null
     },
     {
@@ -463,7 +463,7 @@
       "oficina": "OF504",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.03,
       "espesor_m": null
     },
     {
@@ -472,7 +472,7 @@
       "oficina": "OF504",
       "secundaria": "OF505",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.45,
       "espesor_m": null
     },
     {
@@ -481,7 +481,7 @@
       "oficina": "OF505",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.3,
       "espesor_m": null,
       "_nota": "tambien limita con: FOSO ASCENSOR"
     },
@@ -491,7 +491,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.08,
       "espesor_m": null
     },
     {
@@ -500,7 +500,7 @@
       "oficina": "OF505",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3,
       "espesor_m": null
     },
     {
@@ -509,7 +509,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.4,
       "espesor_m": null
     },
     {
@@ -518,7 +518,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.62,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -528,7 +528,7 @@
       "oficina": "OF505",
       "secundaria": "PUNTO FIJO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 2.15,
       "espesor_m": null
     },
     {
@@ -537,7 +537,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.73,
       "espesor_m": null
     },
     {
@@ -546,7 +546,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 5,
       "espesor_m": null
     },
     {
@@ -555,7 +555,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 8.6,
       "espesor_m": null
     },
     {
@@ -564,7 +564,7 @@
       "oficina": "OF501",
       "secundaria": "OF505",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 4.8,
       "espesor_m": null
     },
     {
@@ -573,7 +573,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.75,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -583,7 +583,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.53,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -593,7 +593,7 @@
       "oficina": "OF505",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.5,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -603,7 +603,7 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 5.17,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -613,7 +613,7 @@
       "oficina": "PUNTO FIJO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 3.87,
       "espesor_m": null
     },
     {
@@ -622,7 +622,7 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.5,
       "espesor_m": null
     },
     {
@@ -631,7 +631,7 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.35,
       "espesor_m": null
     },
     {
@@ -640,7 +640,7 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 0.5,
       "espesor_m": null
     },
     {
@@ -649,7 +649,7 @@
       "oficina": "PUNTO FIJO",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.3,
       "espesor_m": null
     },
     {
@@ -658,7 +658,7 @@
       "oficina": "PUNTO FIJO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.75,
       "espesor_m": null,
       "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
     },
@@ -668,7 +668,7 @@
       "oficina": "OF501",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.58,
       "espesor_m": null
     },
     {
@@ -677,7 +677,7 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 5.35,
       "espesor_m": null
     },
     {
@@ -686,122 +686,143 @@
       "oficina": "OF501",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": null,
+      "longitud_m": 1.85,
       "espesor_m": null
     },
     {
       "id": "V1",
       "tipo": "Ventana",
       "oficina": "OF504",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 0.83
     },
     {
       "id": "V2",
       "tipo": "Ventana",
       "oficina": "OF504",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 8.16,
+      "_nota_longitud": "Medida suministrada directamente por Alejandro (2026-10-01), no extraida de los planos: ni planta_5.pdf ni PL8-Model.pdf tienen un trazo o cota propia que aisle esta ventana de la linea larga de fachada."
     },
     {
       "id": "V3",
       "tipo": "Ventana",
       "oficina": "OF505",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 7.47,
+      "_nota_longitud": "Medida suministrada directamente por Alejandro (2026-10-01), no extraida de los planos: ni planta_5.pdf ni PL8-Model.pdf tienen un trazo o cota propia que aisle esta ventana de la linea larga de fachada."
     },
     {
       "id": "V4",
       "tipo": "Ventana",
       "oficina": "OF505",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.1
     },
     {
       "id": "AV1",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF502",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 7.4
     },
     {
       "id": "AV2",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF503",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.2
     },
     {
       "id": "AV3",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF503",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.2
     },
     {
       "id": "AV4",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF503",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.1
     },
     {
       "id": "AV5",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF504",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 0.12
     },
     {
       "id": "AV6",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF505",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.31
     },
     {
       "id": "AV7",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF505",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 1.31
     },
     {
       "id": "AV10",
       "tipo": "Antepecho+Ventana",
       "oficina": "OF501",
-      "muro_asociado": null
+      "muro_asociado": null,
+      "longitud_m": 0.12,
+      "_nota_longitud": "Medido en el plano como 'AV8' (posible inconsistencia de nomenclatura entre el catalogo y el rotulo del plano; longitud asignada por coincidencia de posicion/oficina)."
     },
     {
       "id": "MV1",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF501",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 0.7
     },
     {
       "id": "MV2",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF501",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 0.76
     },
     {
       "id": "MV3",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF502",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 0.36
     },
     {
       "id": "MV4",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF503",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 0.5
     },
     {
       "id": "MV5",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF504",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 0.78
     },
     {
       "id": "MV6",
       "tipo": "MuroVentanaBaño",
       "oficina": "OF505",
       "muro_asociado": null,
-      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente"
+      "_nota": "el excel decia 'comparte con BUITRON'; buitron ya no se trata como espacio propio, falta confirmar con que oficina/zona colinda realmente",
+      "longitud_m": 1.4
     },
     {
       "id": "C1",
@@ -847,13 +868,15 @@
       "id": "R1",
       "tipo": "Rejilla",
       "oficina": "OF504",
-      "ubicacion": null
+      "ubicacion": null,
+      "longitud_m": 1
     },
     {
       "id": "R2",
       "tipo": "Rejilla",
       "oficina": "OF505",
-      "ubicacion": null
+      "ubicacion": null,
+      "longitud_m": 1
     },
     {
       "id": "MES1",
