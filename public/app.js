@@ -1,6 +1,6 @@
 // Configuración de la app
 let CATALOGO = [];
-let CATALOGOS = { tipo2: [], bajos: [], piso5: [], piso1: [] };
+let CATALOGOS = { tipo2: [], bajos: [], piso5: [], piso1: [], piso3: [] };
 let REGLAS = {
   bien: { label: "Bien (sin patología)", intervencion: "", capitulo: "", unidad: "", tipo_cantidad: "", cascada: null },
   panete: {
@@ -380,19 +380,21 @@ function toast(msg) {
 async function loadData() {
   try {
     // Cargar catálogos (tipo2 = pisos 15-16, bajos = pisos 6,7,8,10,11,13,14, piso5 = piso 5)
-    const [catTipo2Res, catBajosRes, catPiso5Res, catPiso1Res] = await Promise.all([
+    const [catTipo2Res, catBajosRes, catPiso5Res, catPiso1Res, catPiso3Res] = await Promise.all([
       fetchConTimeout('/api/catalogo?grupo=tipo2', {}, 15000),
       fetchConTimeout('/api/catalogo?grupo=bajos', {}, 15000),
       fetchConTimeout('/api/catalogo?grupo=piso5', {}, 15000),
-      fetchConTimeout('/api/catalogo?grupo=piso1', {}, 15000)
+      fetchConTimeout('/api/catalogo?grupo=piso1', {}, 15000),
+      fetchConTimeout('/api/catalogo?grupo=piso3', {}, 15000)
     ]);
     CATALOGOS.tipo2 = await catTipo2Res.json();
     CATALOGOS.bajos = await catBajosRes.json();
     CATALOGOS.piso5 = await catPiso5Res.json();
     CATALOGOS.piso1 = await catPiso1Res.json();
+    CATALOGOS.piso3 = await catPiso3Res.json();
     CATALOGO = CATALOGOS[grupoDePiso(state.piso)];
     safeSetLocalStorage('ccp_cache_catalogos', CATALOGOS);
-    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos · Catálogo piso1: ${CATALOGOS.piso1.length} elementos`);
+    console.log(`Catálogo tipo2: ${CATALOGOS.tipo2.length} elementos · Catálogo bajos: ${CATALOGOS.bajos.length} elementos · Catálogo piso5: ${CATALOGOS.piso5.length} elementos · Catálogo piso1: ${CATALOGOS.piso1.length} elementos · Catálogo piso3: ${CATALOGOS.piso3.length} elementos`);
 
     // Cargar configuración
     const confRes = await fetchConTimeout('/api/config', {}, 15000);
