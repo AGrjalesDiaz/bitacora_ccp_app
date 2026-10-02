@@ -141,7 +141,7 @@ app.put('/api/config/:key', (req, res) => {
 
 app.get('/api/catalogo', (req, res) => {
   // Sin parámetro ?grupo= se mantiene el comportamiento anterior (catálogo tipo2, pisos 15-16).
-  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5' || req.query.grupo === 'piso1') ? req.query.grupo : 'tipo2';
+  const grupo = (req.query.grupo === 'bajos' || req.query.grupo === 'piso5' || req.query.grupo === 'piso1' || req.query.grupo === 'piso3') ? req.query.grupo : 'tipo2';
   res.json(catalogos[grupo]);
 });
 
