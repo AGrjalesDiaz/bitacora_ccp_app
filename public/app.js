@@ -47,11 +47,12 @@ function cieloRasoIntervencion(piso) { return CIELO_RASO_INTERVENCION[piso] || C
 // "piso5" = piso 5, catalogo propio e independiente (catalogo_piso5.json) — no comparte planta con ningun otro piso.
 // "piso1" = piso 1, catalogo propio e independiente (catalogo_piso1.json) — no comparte planta con ningun otro piso.
 // Aqui los espacios se llaman "Local" (Local 1 a Local 8 y Local 10 — no existe Local 9 en esta planta).
-const PISO_GRUPO = { "1": "piso1", "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
+const PISO_GRUPO = { "1": "piso1", "3": "piso3", "5": "piso5", "15": "tipo2", "16": "tipo2", "6": "bajos", "7": "bajos", "8": "bajos", "9": "bajos", "10": "bajos", "11": "bajos", "12": "bajos", "13": "bajos", "14": "bajos" };
 function grupoDePiso(piso) { return PISO_GRUPO[piso] || "tipo2"; }
 
 const PISOS_DISPONIBLES = [
   { value: "1", label: "Piso 1" },
+  { value: "3", label: "Piso 3" },
   { value: "5", label: "Piso 5" },
   { value: "6", label: "Piso 6" },
   { value: "7", label: "Piso 7" },
@@ -75,7 +76,12 @@ const OFICINAS_POR_GRUPO = {
   piso5: ["OF501", "OF502", "OF503", "OF504", "OF505", "PASILLO", "PUNTO FIJO", "FOSO ASCENSOR"],
   // Piso 1: locales comerciales (Local 1-8 y Local 10; no existe Local 9) + zonas comunes propias de esta planta.
   piso1: ["LOCAL1", "LOCAL2", "LOCAL3", "LOCAL4", "LOCAL5", "LOCAL6", "LOCAL7", "LOCAL8", "LOCAL10",
-    "HALL OFICINAS", "PUNTO FIJO ESCALERAS", "FOSO ASCENSOR", "ESCALERAS PISO 3"]
+    "HALL OFICINAS", "PUNTO FIJO ESCALERAS", "FOSO ASCENSOR", "ESCALERAS PISO 3"],
+  // Piso 3: planta especial (auditorio/escenario/salas), zonas asignadas por revision visual del plano
+  // rotulado Planta_piso_3.dxf; confirmar/ajustar nombres exactos en la primera visita de campo.
+  piso3: ["BODEGA 2", "AUDITORIO", "ESCENARIO / ASEO ESCENARIO", "RECEPCION",
+    "A.C.U.P. (JUNTO A BODEGA)", "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "SALA DE CONFERENCIAS / TERRAZA", "SALA DE JUNTAS", "OF. COORDINADORA", "TERRAZA (JUNTO A ESCENARIO)"]
 };
 function oficinasDeGrupo(grupo) { return OFICINAS_POR_GRUPO[grupo] || OFICINAS_ORDEN; }
 
@@ -83,7 +89,8 @@ const GRUPO_LABELS = {
   bajos: "Plantas pisos 6, 7, 8, 10, 11, 13 y 14",
   tipo2: "Planta Tipo II — Pisos 15 y 16",
   piso5: "Piso 5",
-  piso1: "Piso 1"
+  piso1: "Piso 1",
+  piso3: "Piso 3"
 };
 function grupoLabel(piso) {
   return GRUPO_LABELS[grupoDePiso(piso)] || GRUPO_LABELS.tipo2;

@@ -49,7 +49,7 @@ const configFile = path.join(dataDir, 'config.json');
 // "tipo2" = planta tipo pisos 15-16 (catalogo original, sin cambios).
 // "bajos" = planta tipo pisos 6,7,8,10,11,13,14 (catalogo nuevo, digitalizado por el ingeniero).
 // "piso5" = piso 5, unico (no comparte planta con ningun otro piso), digitalizado aparte por el ingeniero.
-let catalogos = { tipo2: [], bajos: [], piso5: [], piso1: [] };
+let catalogos = { tipo2: [], bajos: [], piso5: [], piso1: [], piso3: [] };
 try {
   const rawData = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_planta_tipo2.json'), 'utf-8');
   catalogos.tipo2 = JSON.parse(rawData);
@@ -84,6 +84,15 @@ try {
 } catch (err) {
   console.error('Advertencia: no se pudo cargar el catálogo de piso 1:', err.message);
   catalogos.piso1 = [];
+}
+try {
+  const rawPiso3 = fs.readFileSync(path.join(__dirname, 'data', 'catalogo_piso3.json'), 'utf-8');
+  const parsedPiso3 = JSON.parse(rawPiso3);
+  catalogos.piso3 = Array.isArray(parsedPiso3) ? parsedPiso3 : (parsedPiso3.elementos || []);
+  console.log(`✓ Catálogo piso3 cargado: ${catalogos.piso3.length} elementos`);
+} catch (err) {
+  console.error('Advertencia: no se pudo cargar el catálogo de piso 3:', err.message);
+  catalogos.piso3 = [];
 }
 
 // Se mantiene 'catalogo' (tipo2) por compatibilidad con cualquier uso previo del nombre.

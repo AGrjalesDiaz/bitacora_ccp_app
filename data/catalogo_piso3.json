@@ -1,0 +1,912 @@
+[
+  {
+    "id": "M1",
+    "tipo": "Muro",
+    "oficina": "A.C.U.P. (JUNTO A BODEGA)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M2",
+    "tipo": "Muro",
+    "oficina": "BODEGA 2",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M3",
+    "tipo": "Muro",
+    "oficina": "BODEGA 2",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M4",
+    "tipo": "Muro",
+    "oficina": "BODEGA 2",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M5",
+    "tipo": "Muro",
+    "oficina": "BODEGA 2",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M6",
+    "tipo": "Muro",
+    "oficina": "BODEGA 2",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M7",
+    "tipo": "Muro",
+    "oficina": "A.C.U.P. (JUNTO A BODEGA)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M8",
+    "tipo": "Muro",
+    "oficina": "A.C.U.P. (JUNTO A BODEGA)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M9",
+    "tipo": "Muro",
+    "oficina": "A.C.U.P. (JUNTO A BODEGA)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M10",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M11",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M12",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M13",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M14",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M15",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M16",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M17",
+    "tipo": "Muro",
+    "oficina": "RECEPCION",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M18",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M19",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M20",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M22",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M23",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M24",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M25",
+    "tipo": "Muro",
+    "oficina": "AUDITORIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M26",
+    "tipo": "Muro",
+    "oficina": "AUDITORIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M27",
+    "tipo": "Muro",
+    "oficina": "AUDITORIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M28",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M29",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M30",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M31",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M32",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M33",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M34",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M35",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M36",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M37",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M38",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M39",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M40",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M41",
+    "tipo": "Muro",
+    "oficina": "ESCENARIO / ASEO ESCENARIO",
+    "secundaria": null,
+    "altura_fija": null,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo; altura declarada \"Variable\" en el plano, no tiene altura fija - verificar en campo"
+  },
+  {
+    "id": "M42",
+    "tipo": "Muro",
+    "oficina": "TERRAZA (JUNTO A ESCENARIO)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M43",
+    "tipo": "Muro",
+    "oficina": "SALA DE JUNTAS",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M44",
+    "tipo": "Muro",
+    "oficina": "SALA DE JUNTAS",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M45",
+    "tipo": "Muro",
+    "oficina": "OF. COORDINADORA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M46",
+    "tipo": "Muro",
+    "oficina": "OF. COORDINADORA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M47",
+    "tipo": "Muro",
+    "oficina": "OF. COORDINADORA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M48",
+    "tipo": "Muro",
+    "oficina": "OF. COORDINADORA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M49",
+    "tipo": "Muro",
+    "oficina": "OF. COORDINADORA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M50",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M51",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M52",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M53",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M55",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M56",
+    "tipo": "Muro",
+    "oficina": "SALA DE CONFERENCIAS / TERRAZA",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M57",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M58",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M59",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M60",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M61",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M62",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M63",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M64",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M65",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M66",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M67",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M68",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M69",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M70",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M71",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M72",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M73",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M74",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M75",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M76",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M77",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M78",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M79",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M80",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M81",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M82",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M83",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M84",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M85",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M86",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M87",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M88",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M89",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M91",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M92",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M93",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  },
+  {
+    "id": "M94",
+    "tipo": "Muro",
+    "oficina": "NUCLEO SERVICIOS (ASC/ESCALERA/ASEO/AIRE ACOND/W.C. HOMBRES-DAMAS/MINUSV.)",
+    "secundaria": null,
+    "altura_fija": 3.25,
+    "longitud_m": null,
+    "espesor_m": null,
+    "_nota": "piso 3: zona asignada por revision visual del plano rotulado (Planta_piso_3.dxf); longitud pendiente de leer de las cotas propias del mismo plano; confirmar/ajustar zona exacta en primera visita de campo"
+  }
+]
