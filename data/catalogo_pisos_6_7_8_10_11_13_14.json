@@ -12,9 +12,8 @@
       "oficina": "OF01",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.56,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.76m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M2",
@@ -22,9 +21,8 @@
       "oficina": "OF01",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 0.6,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.36m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M3",
@@ -32,9 +30,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.6,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.47m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M4",
@@ -42,9 +39,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.2,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.29m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M5",
@@ -52,9 +48,8 @@
       "oficina": "OF01",
       "secundaria": "OF02",
       "altura_fija": null,
-      "longitud_m": 1.42,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.53m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M6",
@@ -62,9 +57,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.83,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.12m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M7",
@@ -72,9 +66,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.83,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M8",
@@ -82,9 +75,8 @@
       "oficina": "OF01",
       "secundaria": "OF02",
       "altura_fija": null,
-      "longitud_m": 0.83,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.28m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M9",
@@ -92,9 +84,8 @@
       "oficina": "OF01",
       "secundaria": "OF02",
       "altura_fija": null,
-      "longitud_m": 3.94,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.22m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M10",
@@ -102,9 +93,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.1,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M11",
@@ -112,9 +102,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 4.8,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.05m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M12",
@@ -122,9 +111,8 @@
       "oficina": "OF01",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.6,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.62m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "V1",
@@ -186,9 +174,8 @@
       "oficina": "OF02",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 1.38,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M16",
@@ -196,9 +183,8 @@
       "oficina": "OF02",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 4.12,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.95m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M17",
@@ -206,9 +192,8 @@
       "oficina": "OF02",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.38,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.88m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M18",
@@ -216,9 +201,8 @@
       "oficina": "OF02",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.42,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.32m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M19",
@@ -226,9 +210,8 @@
       "oficina": "OF02",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.79,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.13m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M20",
@@ -236,9 +219,8 @@
       "oficina": "OF02",
       "secundaria": "OF03",
       "altura_fija": null,
-      "longitud_m": 1.79,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.97m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M21",
@@ -246,9 +228,8 @@
       "oficina": "OF02",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.39,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.89m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "V3",
@@ -292,9 +273,8 @@
       "oficina": "OF03",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 1.94,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.21m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M23",
@@ -302,9 +282,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.11,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.30m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M24",
@@ -312,9 +291,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.46,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.49m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M26",
@@ -322,9 +300,8 @@
       "oficina": "OF03",
       "secundaria": "OF04",
       "altura_fija": null,
-      "longitud_m": 0.81,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.39m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M27",
@@ -332,9 +309,8 @@
       "oficina": "OF03",
       "secundaria": "OF04",
       "altura_fija": null,
-      "longitud_m": 2.72,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.33m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M28",
@@ -342,9 +318,8 @@
       "oficina": "OF03",
       "secundaria": "OF04",
       "altura_fija": null,
-      "longitud_m": 1.7,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.49m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M29",
@@ -352,9 +327,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.7,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.38m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M30",
@@ -362,9 +336,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 4.87,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.83m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M31",
@@ -372,9 +345,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.3,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M33",
@@ -382,9 +354,8 @@
       "oficina": "OF03",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.45,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.21m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M39",
@@ -392,9 +363,8 @@
       "oficina": "OF03",
       "secundaria": "OF04",
       "altura_fija": null,
-      "longitud_m": 1.58,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.49m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "V4",
@@ -456,9 +426,8 @@
       "oficina": "OF04",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 1.94,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.59m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M35",
@@ -466,9 +435,8 @@
       "oficina": "OF04",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 1.94,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.69m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M36",
@@ -476,9 +444,8 @@
       "oficina": "OF04",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.9,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.15m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M37",
@@ -486,9 +453,8 @@
       "oficina": "OF04",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.12,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.74m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M38",
@@ -496,9 +462,8 @@
       "oficina": "OF04",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.7,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.78m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M40",
@@ -506,9 +471,8 @@
       "oficina": "OF04",
       "secundaria": "OF05",
       "altura_fija": null,
-      "longitud_m": 5.33,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.23m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M41",
@@ -516,9 +480,8 @@
       "oficina": "OF04",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.3,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.35m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M42",
@@ -526,9 +489,8 @@
       "oficina": "OF04",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 6.67,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M43",
@@ -536,9 +498,8 @@
       "oficina": "OF04",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.41,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "MV4",
@@ -594,9 +555,8 @@
       "oficina": "OF05",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.0,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.54m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M45",
@@ -604,9 +564,8 @@
       "oficina": "OF05",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 2.3,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.71m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M46",
@@ -614,9 +573,8 @@
       "oficina": "OF05",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.23,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.17m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M47",
@@ -624,9 +582,8 @@
       "oficina": "OF05",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.03,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.43m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M48",
@@ -634,9 +591,8 @@
       "oficina": "OF05",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.0,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M51",
@@ -644,9 +600,8 @@
       "oficina": "OF05",
       "secundaria": "OF06",
       "altura_fija": null,
-      "longitud_m": 2.0,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.47m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M52",
@@ -654,9 +609,8 @@
       "oficina": "OF05",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 2.45,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.23m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M53",
@@ -664,9 +618,8 @@
       "oficina": "OF05",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.5,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "V6",
@@ -722,9 +675,8 @@
       "oficina": "OF06",
       "secundaria": "PASILLO",
       "altura_fija": null,
-      "longitud_m": 2.08,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.48m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M55",
@@ -732,9 +684,8 @@
       "oficina": "OF06",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.58,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.18m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M56",
@@ -742,9 +693,8 @@
       "oficina": "OF06",
       "secundaria": "BUITRON 2",
       "altura_fija": null,
-      "longitud_m": 0.3,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.86m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M57",
@@ -752,9 +702,8 @@
       "oficina": "OF06",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": 0.8,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.86m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M58",
@@ -762,9 +711,8 @@
       "oficina": "OF06",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.9,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.27m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M59",
@@ -772,9 +720,8 @@
       "oficina": "OF06",
       "secundaria": "PUNTO FIJO",
       "altura_fija": null,
-      "longitud_m": 1.87,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.76m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M60",
@@ -782,9 +729,8 @@
       "oficina": "OF06",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.72,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.64m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M61",
@@ -792,9 +738,8 @@
       "oficina": "OF06",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 2.3,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.09m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M62",
@@ -802,9 +747,8 @@
       "oficina": "OF06",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.64,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.42m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "V8",
@@ -871,9 +815,8 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.6,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.20m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M14",
@@ -881,9 +824,8 @@
       "oficina": "PASILLO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.38,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.28m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M63",
@@ -891,9 +833,8 @@
       "oficina": "PASILLO",
       "secundaria": "BUITRON 1",
       "altura_fija": null,
-      "longitud_m": 0.5,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.45m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M65",
@@ -901,9 +842,8 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": 0.34,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.89m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M68",
@@ -911,9 +851,8 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": 2.0,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M69",
@@ -921,9 +860,8 @@
       "oficina": "PASILLO",
       "secundaria": "FOSO ASCENSOR",
       "altura_fija": null,
-      "longitud_m": 0.4,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.42m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M74",
@@ -931,9 +869,8 @@
       "oficina": "PASILLO",
       "secundaria": "PUNTO FIJO",
       "altura_fija": null,
-      "longitud_m": 2.7,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.44m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "JAR1",
@@ -976,9 +913,8 @@
       "oficina": "FOSO ASCENSOR",
       "secundaria": "BUITRON 1",
       "altura_fija": null,
-      "longitud_m": 0.9,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.16m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M67",
@@ -986,9 +922,8 @@
       "oficina": "FOSO ASCENSOR",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 0.9,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.39m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M70",
@@ -996,9 +931,8 @@
       "oficina": "FOSO ASCENSOR",
       "secundaria": "PUNTO FIJO",
       "altura_fija": null,
-      "longitud_m": 0.8,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.14m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "PISO-FOSOASCENSOR",
@@ -1019,9 +953,8 @@
       "oficina": "PUNTO FIJO",
       "secundaria": "BUITRON 3",
       "altura_fija": null,
-      "longitud_m": 1.05,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M72",
@@ -1029,9 +962,8 @@
       "oficina": "PUNTO FIJO",
       "secundaria": null,
       "altura_fija": null,
-      "longitud_m": 1.5,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.84m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "M73",
@@ -1039,9 +971,8 @@
       "oficina": "PUNTO FIJO",
       "secundaria": "BUITRON 3",
       "altura_fija": null,
-      "longitud_m": 1.5,
-      "espesor_m": null,
-      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.74m) - revisar si confianza baja"
+      "longitud_m": null,
+      "espesor_m": null
     },
     {
       "id": "AV8",

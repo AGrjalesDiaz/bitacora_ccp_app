@@ -6,8 +6,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": null,
-    "longitud_m": 2.56,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.90m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M2",
@@ -16,8 +15,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": null,
-    "longitud_m": 0.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.68m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M3",
@@ -26,8 +24,7 @@
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.48m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M4",
@@ -36,8 +33,7 @@
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.2,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.35m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M5",
@@ -46,8 +42,7 @@
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.42,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.57m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M6",
@@ -56,8 +51,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.37m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M7",
@@ -66,8 +60,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.50m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M8",
@@ -75,8 +68,7 @@
     "oficina": "OF501",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.83,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.34m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M9",
@@ -84,8 +76,7 @@
     "oficina": "OF501",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.83,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.75m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M10",
@@ -94,8 +85,7 @@
     "secundaria": "OF501",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.2,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.50m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M11",
@@ -104,8 +94,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": "OF502",
-    "longitud_m": 3.94,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.27m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M12",
@@ -113,8 +102,7 @@
     "oficina": "OF501",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.98,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.64m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M13",
@@ -122,8 +110,7 @@
     "oficina": "OF501",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M14",
@@ -131,8 +118,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.01m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M15",
@@ -140,8 +126,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 4.12,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.63m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M16",
@@ -149,8 +134,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.31m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M17",
@@ -158,8 +142,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.00m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M18",
@@ -168,8 +151,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": null,
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.62m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M19",
@@ -177,8 +159,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.2,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.38m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M20",
@@ -186,8 +167,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.79,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.75m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M21",
@@ -195,8 +175,7 @@
     "oficina": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.79,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.36m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M22",
@@ -205,8 +184,7 @@
     "secundaria": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.39,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.40m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M23",
@@ -215,8 +193,7 @@
     "secundaria": "OF502",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 4.12,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.19m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M24",
@@ -224,8 +201,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.51,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.23m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M25",
@@ -233,8 +209,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.34,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.45m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M26",
@@ -243,8 +218,7 @@
     "secundaria": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.72,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.43m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M27",
@@ -252,8 +226,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.81,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.32m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M28",
@@ -262,8 +235,7 @@
     "secundaria": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.81,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.37m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M29",
@@ -272,8 +244,7 @@
     "secundaria": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.7,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.52m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M30",
@@ -282,8 +253,7 @@
     "secundaria": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.7,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.78m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M31",
@@ -291,8 +261,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.41m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M32",
@@ -300,8 +269,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.44m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M33",
@@ -309,8 +277,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.09m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M34",
@@ -318,8 +285,7 @@
     "oficina": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 4.87,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.90m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M35",
@@ -328,8 +294,7 @@
     "secundaria": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.94,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.44m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M36",
@@ -338,8 +303,7 @@
     "secundaria": "OF503",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.94,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.42m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M37",
@@ -348,8 +312,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.41,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.59m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M38",
@@ -357,8 +320,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.30m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M39",
@@ -366,8 +328,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.12,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.83m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M40",
@@ -375,8 +336,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.7,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.70m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M41",
@@ -384,8 +344,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 3.4,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.86m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M42",
@@ -394,8 +353,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.4,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.35m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M43",
@@ -404,8 +362,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 6.67,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.31m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M44",
@@ -413,8 +370,7 @@
     "oficina": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 8.48,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.26m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M45",
@@ -423,8 +379,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": "PASILLO",
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.34m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M46",
@@ -432,8 +387,7 @@
     "oficina": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.37m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M47",
@@ -442,8 +396,7 @@
     "altura_fija": 2.423,
     "punto_fijo": false,
     "secundaria": "PASILLO",
-    "longitud_m": 2.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.74m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M48",
@@ -451,8 +404,7 @@
     "oficina": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.03,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.73m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M49",
@@ -460,8 +412,7 @@
     "oficina": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.03,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.38m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M50",
@@ -470,8 +421,7 @@
     "secundaria": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.48m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M51",
@@ -479,8 +429,7 @@
     "oficina": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.5,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.67m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M52",
@@ -488,8 +437,7 @@
     "oficina": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.45,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.31m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M53",
@@ -498,8 +446,7 @@
     "secundaria": "OF504",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.5,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=0.94m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M54",
@@ -508,8 +455,7 @@
     "secundaria": "OF505",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.02m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M55",
@@ -517,8 +463,7 @@
     "oficina": "OF506",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.08,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.46m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M56",
@@ -526,8 +471,7 @@
     "oficina": "OF506",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.64,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.12m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M57",
@@ -536,8 +480,7 @@
     "secundaria": "PASILLO",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.08,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.69m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M58",
@@ -545,8 +488,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.58,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.41m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M59",
@@ -554,8 +496,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.15m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M60",
@@ -563,8 +504,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.8,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.08m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M61",
@@ -573,8 +513,7 @@
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.4,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.41m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M62",
@@ -582,8 +521,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.8,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.79m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M63",
@@ -591,8 +529,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.87,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.13m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M64",
@@ -600,8 +537,7 @@
     "oficina": "OF506",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 4.03,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.79m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M65",
@@ -609,8 +545,7 @@
     "oficina": "OF506",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.72,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.21m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M66",
@@ -619,8 +554,7 @@
     "secundaria": null,
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.5,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.80m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M67",
@@ -628,8 +562,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 1.58,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.53m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M68",
@@ -637,8 +570,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.5,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.28m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M69",
@@ -646,8 +578,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M70",
@@ -655,8 +586,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 0.8,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.42m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M71",
@@ -664,8 +594,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=0.91m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M72",
@@ -673,8 +602,7 @@
     "oficina": "PUNTO FIJO",
     "altura_fija": null,
     "punto_fijo": true,
-    "longitud_m": 0.65,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.16m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M73",
@@ -682,8 +610,7 @@
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 2.423,
     "punto_fijo": false,
-    "longitud_m": 2.7,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.35m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M74",
@@ -691,8 +618,7 @@
     "oficina": "PUNTO FIJO",
     "altura_fija": null,
     "punto_fijo": true,
-    "longitud_m": 2.15,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.29m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M75",
@@ -700,8 +626,7 @@
     "oficina": "PUNTO FIJO",
     "altura_fija": null,
     "punto_fijo": true,
-    "longitud_m": 1.05,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.66m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "M76",
@@ -709,384 +634,335 @@
     "oficina": "PUNTO FIJO",
     "altura_fija": null,
     "punto_fijo": true,
-    "longitud_m": 2.15,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.53m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V1",
     "tipo": "Ventana",
     "oficina": "OF501",
     "muro_asociado": "M12",
-    "longitud_m": 0.98,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.06m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V2",
     "tipo": "Ventana",
     "oficina": "OF501",
     "muro_asociado": "M11",
-    "longitud_m": 3.59,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.10m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V3",
     "tipo": "Ventana",
     "oficina": "OF502",
     "muro_asociado": "M11",
-    "longitud_m": 6.81,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.37m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V4",
     "tipo": "Ventana",
     "oficina": "OF503",
     "muro_asociado": "M34",
-    "longitud_m": 4.87,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.44m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V5",
     "tipo": "Ventana",
     "oficina": "OF503",
     "muro_asociado": "M34",
-    "longitud_m": 4.87,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.45m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V6",
     "tipo": "Ventana",
     "oficina": "OF505",
     "muro_asociado": "M52",
-    "longitud_m": 2.45,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.05m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V7",
     "tipo": "Ventana",
     "oficina": "OF505",
     "muro_asociado": "M49",
-    "longitud_m": 2.67,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.23m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V8",
     "tipo": "Ventana",
     "oficina": "OF506",
     "muro_asociado": "M50",
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.79m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "V9",
     "tipo": "Ventana",
     "oficina": "OF506",
     "muro_asociado": "M65",
-    "longitud_m": 0.72,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.41m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV1",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF501",
     "muro_asociado": "M1",
-    "longitud_m": 2.56,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.53m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV2",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF501",
     "muro_asociado": "M13",
-    "longitud_m": 2.32,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.32m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV3",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF503",
     "muro_asociado": "M31",
-    "longitud_m": 3.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.11m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV4",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF504",
     "muro_asociado": "M41",
-    "longitud_m": 2.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.45m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV5",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF504",
     "muro_asociado": "M53",
-    "longitud_m": 8.11,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.67m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "AV6",
     "tipo": "Antepecho+Ventana",
     "oficina": "OF506",
     "muro_asociado": "M63",
-    "longitud_m": 1.1,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.58m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV1",
     "tipo": "MuroVentanaBaño",
     "oficina": "OF501",
     "muro_asociado": "M7",
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.71m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV2",
     "tipo": "MuroVentanaBaño",
     "oficina": "OF502",
     "muro_asociado": "M16",
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.07m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV3",
     "tipo": "MuroVentanaBaño",
     "oficina": "OF503/OF504 (BT3 compartido)",
     "muro_asociado": "M27",
-    "longitud_m": 1.46,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.33m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV4",
     "tipo": "MuroVentanaBaño",
     "oficina": "OF503/OF504 (BT3 compartido)",
     "muro_asociado": "M27",
-    "longitud_m": 0.81,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.71m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV5",
     "tipo": "MuroVentanaBaño",
     "oficina": "OF506",
     "muro_asociado": "M54",
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.01m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "MV6",
     "tipo": "MuroVentanaBaño",
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "muro_asociado": "M58",
-    "longitud_m": 1.58,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=0.98m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "R1",
     "tipo": "Rejilla",
     "oficina": "OF501",
     "ubicacion": "Esquina fachada",
-    "longitud_m": 1.1,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.61m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "R2",
     "tipo": "Rejilla",
     "oficina": "OF503",
     "ubicacion": "Esquina fachada",
-    "longitud_m": 3.98,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=2.05m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "R3",
     "tipo": "Rejilla",
     "oficina": "OF505",
     "ubicacion": "Esquina fachada",
-    "longitud_m": 1.5,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.77m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "R4",
     "tipo": "Rejilla",
     "oficina": "OF506",
     "ubicacion": "Esquina fachada",
-    "longitud_m": 0.72,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.81m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT1",
     "tipo": "Buitron",
     "oficina": "OF501",
     "tipo_buitron": "Independiente",
-    "longitud_m": 0.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.66m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT2",
     "tipo": "Buitron",
     "oficina": "OF502",
     "tipo_buitron": "Independiente",
-    "longitud_m": 1.38,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.20m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT3",
     "tipo": "Buitron",
     "oficina": "OF503+OF504",
     "tipo_buitron": "Compartido",
-    "longitud_m": 0.81,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.62m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT4",
     "tipo": "Buitron",
     "oficina": "OF505",
     "tipo_buitron": "Independiente",
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.33m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT5",
     "tipo": "Buitron",
     "oficina": "OF506",
     "tipo_buitron": "Independiente",
-    "longitud_m": 1.58,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.16m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "BT6",
     "tipo": "Buitron",
     "oficina": "Escalera/Núcleo (junto a OF506)",
     "tipo_buitron": "Independiente",
-    "longitud_m": 0.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.90m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME1",
     "tipo": "Mesón",
     "oficina": "OF501",
     "profundidad_fija": 0.6,
-    "longitud_m": 0.83,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.70m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME2",
     "tipo": "Mesón",
     "oficina": "OF502",
     "profundidad_fija": 0.6,
-    "longitud_m": 1.79,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.19m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME3",
     "tipo": "Mesón",
     "oficina": "OF503",
     "profundidad_fija": 0.6,
-    "longitud_m": 2.72,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.08m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME4",
     "tipo": "Mesón",
     "oficina": "OF504",
     "profundidad_fija": 0.6,
-    "longitud_m": 1.94,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.67m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME5",
     "tipo": "Mesón",
     "oficina": "OF505",
     "profundidad_fija": 0.6,
-    "longitud_m": 2.0,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.33m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "ME6",
     "tipo": "Mesón",
     "oficina": "OF506",
     "profundidad_fija": 0.6,
-    "longitud_m": 0.9,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=0.99m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "JA1",
     "tipo": "Jardinera",
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 0.7,
-    "longitud_m": 1.04,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.66m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "JA2",
     "tipo": "Jardinera",
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
     "altura_fija": 0.7,
-    "longitud_m": 1.04,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.35m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C1",
     "tipo": "Columna",
     "oficina": "OF501",
-    "longitud_m": 1.6,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza alta (dist=0.30m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C2",
     "tipo": "Columna",
     "oficina": "OF502",
-    "longitud_m": 1.3,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.62m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C3",
     "tipo": "Columna",
     "oficina": "OF503",
-    "longitud_m": 3.98,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.15m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C4",
     "tipo": "Columna",
     "oficina": "OF504",
-    "longitud_m": 1.46,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.09m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C5",
     "tipo": "Columna",
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
-    "longitud_m": 1.58,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.56m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C6",
     "tipo": "Columna",
     "oficina": "NUCLEO COMUN (ascensores/escalera)",
-    "longitud_m": 3.22,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.75m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C7",
     "tipo": "Columna",
     "oficina": "OF505",
-    "longitud_m": 2.44,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.16m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C8",
     "tipo": "Columna",
     "oficina": "OF506",
     "secundaria": "OF505",
-    "longitud_m": 0.64,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza media (dist=0.71m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "C9",
     "tipo": "Columna",
     "oficina": "OF506",
-    "longitud_m": 4.03,
-    "_nota": "cruce automatico rotulado/DXF cotas 2017 (tipo2, piso 15 como referencia) via transformacion de coordenadas; confianza baja (dist=1.43m) - revisar si confianza baja"
+    "longitud_m": null
   },
   {
     "id": "PISO-OF501",
