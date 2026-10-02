@@ -6,165 +6,1082 @@
     "2026-09-18: Verificacion del catalogo contra el DXF re-rotulado por Alejandro (pisos 6,7,8,10,11,13,14). Resuelto: agregados R1 (Rejilla, OF01) y R2 (Rejilla, OF03), que existian en el plano pero faltaban en el catalogo. Confirmado sin cambios en el catalogo: la columna rotulada como COL8 cerca de OF06 en el DXF es en realidad COL6 (error de rotulado en el DXF/AutoCAD de Alejandro, a corregir por el de forma independiente, no afecta este catalogo); los Mesones y Buitrones (BT2, BT3) no quedaron rotulados en el plano pero si existen fisicamente y estan en el catalogo; los elementos Piso/CieloRaso no se rotulan en el plano por diseño; el muro M31 se dejo como un solo elemento cubriendo dos segmentos de muro porque no existe M32 en el catalogo (decision intencional de Alejandro)."
   ],
   "elementos": [
-    { "id": "M1",  "tipo": "Muro", "oficina": "OF01", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M2",  "tipo": "Muro", "oficina": "OF01", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M3",  "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M4",  "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M5",  "tipo": "Muro", "oficina": "OF01", "secundaria": "OF02",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M6",  "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M7",  "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M8",  "tipo": "Muro", "oficina": "OF01", "secundaria": "OF02",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M9",  "tipo": "Muro", "oficina": "OF01", "secundaria": "OF02",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M10", "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M11", "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M12", "tipo": "Muro", "oficina": "OF01", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "V1",   "tipo": "Ventana",           "oficina": "OF01", "muro_asociado": null },
-    { "id": "V2",   "tipo": "Ventana",           "oficina": "OF01", "muro_asociado": null },
-    { "id": "AV1",  "tipo": "Antepecho+Ventana", "oficina": "OF01", "muro_asociado": null },
-    { "id": "MV1",  "tipo": "MuroVentanaBaño",   "oficina": "OF01", "muro_asociado": null },
-    { "id": "COL1", "tipo": "Columna",           "oficina": "OF01" },
-    { "id": "MES1", "tipo": "Mesón",             "oficina": "OF01", "profundidad_fija": null },
-    { "id": "R1",   "tipo": "Rejilla",           "oficina": "OF01", "ubicacion": null },
-
-    { "id": "PISO-OF01", "tipo": "Piso",      "oficina": "OF01", "area_base_m2": null, "_nota": "area pendiente - se puede usar el area bruta PH (42.07 m2 segun el PDF) mientras se define la neta" },
-    { "id": "CR-OF01",   "tipo": "CieloRaso", "oficina": "OF01", "area_base_m2": null },
-
-    { "id": "M15", "tipo": "Muro", "oficina": "OF02", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M16", "tipo": "Muro", "oficina": "OF02", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M17", "tipo": "Muro", "oficina": "OF02", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M18", "tipo": "Muro", "oficina": "OF02", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M19", "tipo": "Muro", "oficina": "OF02", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M20", "tipo": "Muro", "oficina": "OF02", "secundaria": "OF03",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M21", "tipo": "Muro", "oficina": "OF02", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "V3",   "tipo": "Ventana",         "oficina": "OF02", "muro_asociado": null },
-    { "id": "MV2",  "tipo": "MuroVentanaBaño", "oficina": "OF02", "muro_asociado": null },
-    { "id": "COL2", "tipo": "Columna",         "oficina": "OF02" },
-    { "id": "MES2", "tipo": "Mesón",           "oficina": "OF02", "profundidad_fija": null },
-
-    { "id": "PISO-OF02", "tipo": "Piso",      "oficina": "OF02", "area_base_m2": null, "_nota": "area pendiente - se puede usar el area bruta PH (52.87 m2 segun el PDF) mientras se define la neta" },
-    { "id": "CR-OF02",   "tipo": "CieloRaso", "oficina": "OF02", "area_base_m2": null },
-
-    { "id": "M22", "tipo": "Muro", "oficina": "OF03", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M23", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M24", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M26", "tipo": "Muro", "oficina": "OF03", "secundaria": "OF04",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M27", "tipo": "Muro", "oficina": "OF03", "secundaria": "OF04",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M28", "tipo": "Muro", "oficina": "OF03", "secundaria": "OF04",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M29", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M30", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M31", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M33", "tipo": "Muro", "oficina": "OF03", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M39", "tipo": "Muro", "oficina": "OF03", "secundaria": "OF04",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "V4",   "tipo": "Ventana",           "oficina": "OF03", "muro_asociado": null },
-    { "id": "V5",   "tipo": "Ventana",           "oficina": "OF03", "muro_asociado": null },
-    { "id": "MV3",  "tipo": "MuroVentanaBaño",   "oficina": "OF03", "muro_asociado": null },
-    { "id": "AV2",  "tipo": "Antepecho+Ventana", "oficina": "OF03", "muro_asociado": null },
-    { "id": "COL3", "tipo": "Columna",           "oficina": "OF03" },
-    { "id": "MES3", "tipo": "Mesón",             "oficina": "OF03", "profundidad_fija": null },
-    { "id": "R2",   "tipo": "Rejilla",           "oficina": "OF03", "ubicacion": null },
-
-    { "id": "PISO-OF03", "tipo": "Piso",      "oficina": "OF03", "area_base_m2": null, "_nota": "area pendiente - este catalogo es solo para pisos 6,7,8,10,11,13,14: usar el area bruta PH de ESE plano (57.55 m2, NO los 62.79 m2 del plano de pisos 9/12, que es una variante distinta) mientras se define la neta" },
-    { "id": "CR-OF03",   "tipo": "CieloRaso", "oficina": "OF03", "area_base_m2": null },
-
-    { "id": "M34", "tipo": "Muro", "oficina": "OF04", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M35", "tipo": "Muro", "oficina": "OF04", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M36", "tipo": "Muro", "oficina": "OF04", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M37", "tipo": "Muro", "oficina": "OF04", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M38", "tipo": "Muro", "oficina": "OF04", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M40", "tipo": "Muro", "oficina": "OF04", "secundaria": "OF05",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M41", "tipo": "Muro", "oficina": "OF04", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M42", "tipo": "Muro", "oficina": "OF04", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M43", "tipo": "Muro", "oficina": "OF04", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "MV4",  "tipo": "MuroVentanaBaño",   "oficina": "OF04", "muro_asociado": null },
-    { "id": "AV3",  "tipo": "Antepecho+Ventana", "oficina": "OF04", "muro_asociado": null },
-    { "id": "AV4",  "tipo": "Antepecho+Ventana", "oficina": "OF04", "muro_asociado": null },
-    { "id": "AV5",  "tipo": "Antepecho+Ventana", "oficina": "OF04", "muro_asociado": null },
-    { "id": "COL4", "tipo": "Columna",           "oficina": "OF04" },
-    { "id": "MES4", "tipo": "Mesón",             "oficina": "OF04", "profundidad_fija": null },
-
-    { "id": "PISO-OF04", "tipo": "Piso",      "oficina": "OF04", "area_base_m2": null, "_nota": "area pendiente - este catalogo es solo para pisos 6,7,8,10,11,13,14: usar el area bruta PH de ESE plano (51.24 m2, NO los 46.00 m2 del plano de pisos 9/12, que es una variante distinta) mientras se define la neta" },
-    { "id": "CR-OF04",   "tipo": "CieloRaso", "oficina": "OF04", "area_base_m2": null },
-
-    { "id": "M44", "tipo": "Muro", "oficina": "OF05", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M45", "tipo": "Muro", "oficina": "OF05", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M46", "tipo": "Muro", "oficina": "OF05", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M47", "tipo": "Muro", "oficina": "OF05", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M48", "tipo": "Muro", "oficina": "OF05", "secundaria": "PASILLO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M51", "tipo": "Muro", "oficina": "OF05", "secundaria": "OF06",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M52", "tipo": "Muro", "oficina": "OF05", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M53", "tipo": "Muro", "oficina": "OF05", "secundaria": null,      "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "V6",   "tipo": "Ventana",           "oficina": "OF05", "muro_asociado": null },
-    { "id": "V7",   "tipo": "Ventana",           "oficina": "OF05", "muro_asociado": null },
-    { "id": "AV6",  "tipo": "Antepecho+Ventana", "oficina": "OF05", "muro_asociado": null },
-    { "id": "MV5",  "tipo": "MuroVentanaBaño",   "oficina": "OF05", "muro_asociado": null },
-    { "id": "COL5", "tipo": "Columna",           "oficina": "OF05" },
-    { "id": "R3",   "tipo": "Rejilla",           "oficina": "OF05", "ubicacion": null },
-
-    { "id": "PISO-OF05", "tipo": "Piso",      "oficina": "OF05", "area_base_m2": null, "_nota": "area pendiente - se puede usar el area bruta PH (59.40 m2 segun el PDF, igual en las dos variantes de plano) mientras se define la neta" },
-    { "id": "CR-OF05",   "tipo": "CieloRaso", "oficina": "OF05", "area_base_m2": null },
-
-    { "id": "M54", "tipo": "Muro", "oficina": "OF06", "secundaria": "PASILLO",       "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M55", "tipo": "Muro", "oficina": "OF06", "secundaria": null,            "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M56", "tipo": "Muro", "oficina": "OF06", "secundaria": "BUITRON 2",     "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M57", "tipo": "Muro", "oficina": "OF06", "secundaria": "FOSO ASCENSOR", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M58", "tipo": "Muro", "oficina": "OF06", "secundaria": null,            "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M59", "tipo": "Muro", "oficina": "OF06", "secundaria": "PUNTO FIJO",    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M60", "tipo": "Muro", "oficina": "OF06", "secundaria": null,            "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M61", "tipo": "Muro", "oficina": "OF06", "secundaria": null,            "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M62", "tipo": "Muro", "oficina": "OF06", "secundaria": null,            "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "V8",   "tipo": "Ventana",           "oficina": "OF06", "muro_asociado": null },
-    { "id": "V9",   "tipo": "Ventana",           "oficina": "OF06", "muro_asociado": null },
-    { "id": "AV7",  "tipo": "Antepecho+Ventana", "oficina": "OF06", "muro_asociado": null },
-    { "id": "MV6",  "tipo": "MuroVentanaBaño",   "oficina": "OF06", "muro_asociado": null },
-    { "id": "COL6", "tipo": "Columna",           "oficina": "OF06" },
-    { "id": "COL7", "tipo": "Columna",           "oficina": "OF06" },
-    { "id": "MES6", "tipo": "Mesón",             "oficina": "OF06", "profundidad_fija": null },
-    { "id": "R4",   "tipo": "Rejilla",           "oficina": "OF06", "ubicacion": null },
-
-    { "id": "PISO-OF06", "tipo": "Piso",      "oficina": "OF06", "area_base_m2": null, "_nota": "area pendiente - se puede usar el area bruta PH (69.20 m2 segun el PDF, igual en las dos variantes de plano) mientras se define la neta" },
-    { "id": "CR-OF06",   "tipo": "CieloRaso", "oficina": "OF06", "area_base_m2": null },
-
-    { "id": "M13", "tipo": "Muro", "oficina": "PASILLO", "secundaria": null,                    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M14", "tipo": "Muro", "oficina": "PASILLO", "secundaria": null,                    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M63", "tipo": "Muro", "oficina": "PASILLO", "secundaria": "BUITRON 1",             "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M65", "tipo": "Muro", "oficina": "PASILLO", "secundaria": "FOSO ASCENSOR",         "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M68", "tipo": "Muro", "oficina": "PASILLO", "secundaria": "FOSO ASCENSOR",         "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M69", "tipo": "Muro", "oficina": "PASILLO", "secundaria": "FOSO ASCENSOR",         "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M74", "tipo": "Muro", "oficina": "PASILLO", "secundaria": "PUNTO FIJO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "JAR1", "tipo": "Jardinera", "oficina": "PASILLO", "altura_fija": null },
-    { "id": "JAR2", "tipo": "Jardinera", "oficina": "PASILLO", "altura_fija": null },
-
-    { "id": "COL8", "tipo": "Columna", "oficina": "PASILLO" },
-    { "id": "COL9", "tipo": "Columna", "oficina": "PASILLO" },
-
-    { "id": "PISO-PASILLO", "tipo": "Piso",      "oficina": "PASILLO", "area_base_m2": null, "_nota": "area pendiente de definir con el ingeniero" },
-    { "id": "CR-PASILLO",   "tipo": "CieloRaso", "oficina": "PASILLO", "area_base_m2": null },
-
-    { "id": "M66", "tipo": "Muro", "oficina": "FOSO ASCENSOR", "secundaria": "BUITRON 1",             "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M67", "tipo": "Muro", "oficina": "FOSO ASCENSOR", "secundaria": null,                    "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M70", "tipo": "Muro", "oficina": "FOSO ASCENSOR", "secundaria": "PUNTO FIJO", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "PISO-FOSOASCENSOR", "tipo": "Piso",      "oficina": "FOSO ASCENSOR", "area_base_m2": null, "_nota": "area pendiente de definir con el ingeniero" },
-    { "id": "CR-FOSOASCENSOR",   "tipo": "CieloRaso", "oficina": "FOSO ASCENSOR", "area_base_m2": null },
-
-    { "id": "M71", "tipo": "Muro", "oficina": "PUNTO FIJO", "secundaria": "BUITRON 3", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M72", "tipo": "Muro", "oficina": "PUNTO FIJO", "secundaria": null,         "altura_fija": null, "longitud_m": null, "espesor_m": null },
-    { "id": "M73", "tipo": "Muro", "oficina": "PUNTO FIJO", "secundaria": "BUITRON 3", "altura_fija": null, "longitud_m": null, "espesor_m": null },
-
-    { "id": "AV8", "tipo": "Antepecho+Ventana", "oficina": "PUNTO FIJO", "muro_asociado": null },
-
-    { "id": "PISO-PUNTOFIJO", "tipo": "Piso",      "oficina": "PUNTO FIJO", "area_base_m2": null, "_nota": "area pendiente de definir con el ingeniero" },
-    { "id": "CR-PUNTOFIJO",   "tipo": "CieloRaso", "oficina": "PUNTO FIJO", "area_base_m2": null },
-
-    { "id": "BT1", "tipo": "Buitron", "oficina": "PASILLO",     "secundaria": "FOSO ASCENSOR", "tipo_buitron": null },
-    { "id": "BT2", "tipo": "Buitron", "oficina": "OF06",        "secundaria": null,             "tipo_buitron": null },
-    { "id": "BT3", "tipo": "Buitron", "oficina": "PUNTO FIJO",  "secundaria": null,             "tipo_buitron": null }
+    {
+      "id": "M1",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.56,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.76m) - revisar si confianza baja"
+    },
+    {
+      "id": "M2",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 0.6,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.36m) - revisar si confianza baja"
+    },
+    {
+      "id": "M3",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.6,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.47m) - revisar si confianza baja"
+    },
+    {
+      "id": "M4",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.2,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.29m) - revisar si confianza baja"
+    },
+    {
+      "id": "M5",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": "OF02",
+      "altura_fija": null,
+      "longitud_m": 1.42,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.53m) - revisar si confianza baja"
+    },
+    {
+      "id": "M6",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.83,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.12m) - revisar si confianza baja"
+    },
+    {
+      "id": "M7",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.83,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+    },
+    {
+      "id": "M8",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": "OF02",
+      "altura_fija": null,
+      "longitud_m": 0.83,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.28m) - revisar si confianza baja"
+    },
+    {
+      "id": "M9",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": "OF02",
+      "altura_fija": null,
+      "longitud_m": 3.94,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.22m) - revisar si confianza baja"
+    },
+    {
+      "id": "M10",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.1,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+    },
+    {
+      "id": "M11",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 4.8,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.05m) - revisar si confianza baja"
+    },
+    {
+      "id": "M12",
+      "tipo": "Muro",
+      "oficina": "OF01",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.6,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.62m) - revisar si confianza baja"
+    },
+    {
+      "id": "V1",
+      "tipo": "Ventana",
+      "oficina": "OF01",
+      "muro_asociado": null
+    },
+    {
+      "id": "V2",
+      "tipo": "Ventana",
+      "oficina": "OF01",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV1",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF01",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV1",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF01",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL1",
+      "tipo": "Columna",
+      "oficina": "OF01"
+    },
+    {
+      "id": "MES1",
+      "tipo": "Mesón",
+      "oficina": "OF01",
+      "profundidad_fija": null
+    },
+    {
+      "id": "R1",
+      "tipo": "Rejilla",
+      "oficina": "OF01",
+      "ubicacion": null
+    },
+    {
+      "id": "PISO-OF01",
+      "tipo": "Piso",
+      "oficina": "OF01",
+      "area_base_m2": null,
+      "_nota": "area pendiente - se puede usar el area bruta PH (42.07 m2 segun el PDF) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF01",
+      "tipo": "CieloRaso",
+      "oficina": "OF01",
+      "area_base_m2": null
+    },
+    {
+      "id": "M15",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 1.38,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+    },
+    {
+      "id": "M16",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 4.12,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.95m) - revisar si confianza baja"
+    },
+    {
+      "id": "M17",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.38,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.88m) - revisar si confianza baja"
+    },
+    {
+      "id": "M18",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.42,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.32m) - revisar si confianza baja"
+    },
+    {
+      "id": "M19",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.79,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.13m) - revisar si confianza baja"
+    },
+    {
+      "id": "M20",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": "OF03",
+      "altura_fija": null,
+      "longitud_m": 1.79,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.97m) - revisar si confianza baja"
+    },
+    {
+      "id": "M21",
+      "tipo": "Muro",
+      "oficina": "OF02",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.39,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.89m) - revisar si confianza baja"
+    },
+    {
+      "id": "V3",
+      "tipo": "Ventana",
+      "oficina": "OF02",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV2",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF02",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL2",
+      "tipo": "Columna",
+      "oficina": "OF02"
+    },
+    {
+      "id": "MES2",
+      "tipo": "Mesón",
+      "oficina": "OF02",
+      "profundidad_fija": null
+    },
+    {
+      "id": "PISO-OF02",
+      "tipo": "Piso",
+      "oficina": "OF02",
+      "area_base_m2": null,
+      "_nota": "area pendiente - se puede usar el area bruta PH (52.87 m2 segun el PDF) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF02",
+      "tipo": "CieloRaso",
+      "oficina": "OF02",
+      "area_base_m2": null
+    },
+    {
+      "id": "M22",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 1.94,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.21m) - revisar si confianza baja"
+    },
+    {
+      "id": "M23",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.11,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.30m) - revisar si confianza baja"
+    },
+    {
+      "id": "M24",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.46,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.49m) - revisar si confianza baja"
+    },
+    {
+      "id": "M26",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": "OF04",
+      "altura_fija": null,
+      "longitud_m": 0.81,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.39m) - revisar si confianza baja"
+    },
+    {
+      "id": "M27",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": "OF04",
+      "altura_fija": null,
+      "longitud_m": 2.72,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.33m) - revisar si confianza baja"
+    },
+    {
+      "id": "M28",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": "OF04",
+      "altura_fija": null,
+      "longitud_m": 1.7,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.49m) - revisar si confianza baja"
+    },
+    {
+      "id": "M29",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.7,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.38m) - revisar si confianza baja"
+    },
+    {
+      "id": "M30",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 4.87,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.83m) - revisar si confianza baja"
+    },
+    {
+      "id": "M31",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.3,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+    },
+    {
+      "id": "M33",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.45,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.21m) - revisar si confianza baja"
+    },
+    {
+      "id": "M39",
+      "tipo": "Muro",
+      "oficina": "OF03",
+      "secundaria": "OF04",
+      "altura_fija": null,
+      "longitud_m": 1.58,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.49m) - revisar si confianza baja"
+    },
+    {
+      "id": "V4",
+      "tipo": "Ventana",
+      "oficina": "OF03",
+      "muro_asociado": null
+    },
+    {
+      "id": "V5",
+      "tipo": "Ventana",
+      "oficina": "OF03",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV3",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF03",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV2",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF03",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL3",
+      "tipo": "Columna",
+      "oficina": "OF03"
+    },
+    {
+      "id": "MES3",
+      "tipo": "Mesón",
+      "oficina": "OF03",
+      "profundidad_fija": null
+    },
+    {
+      "id": "R2",
+      "tipo": "Rejilla",
+      "oficina": "OF03",
+      "ubicacion": null
+    },
+    {
+      "id": "PISO-OF03",
+      "tipo": "Piso",
+      "oficina": "OF03",
+      "area_base_m2": null,
+      "_nota": "area pendiente - este catalogo es solo para pisos 6,7,8,10,11,13,14: usar el area bruta PH de ESE plano (57.55 m2, NO los 62.79 m2 del plano de pisos 9/12, que es una variante distinta) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF03",
+      "tipo": "CieloRaso",
+      "oficina": "OF03",
+      "area_base_m2": null
+    },
+    {
+      "id": "M34",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 1.94,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.59m) - revisar si confianza baja"
+    },
+    {
+      "id": "M35",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 1.94,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.69m) - revisar si confianza baja"
+    },
+    {
+      "id": "M36",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.9,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.15m) - revisar si confianza baja"
+    },
+    {
+      "id": "M37",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.12,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.74m) - revisar si confianza baja"
+    },
+    {
+      "id": "M38",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.7,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.78m) - revisar si confianza baja"
+    },
+    {
+      "id": "M40",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "OF05",
+      "altura_fija": null,
+      "longitud_m": 5.33,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.23m) - revisar si confianza baja"
+    },
+    {
+      "id": "M41",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.3,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.35m) - revisar si confianza baja"
+    },
+    {
+      "id": "M42",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 6.67,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=0.93m) - revisar si confianza baja"
+    },
+    {
+      "id": "M43",
+      "tipo": "Muro",
+      "oficina": "OF04",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.41,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+    },
+    {
+      "id": "MV4",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF04",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV3",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF04",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV4",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF04",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV5",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF04",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL4",
+      "tipo": "Columna",
+      "oficina": "OF04"
+    },
+    {
+      "id": "MES4",
+      "tipo": "Mesón",
+      "oficina": "OF04",
+      "profundidad_fija": null
+    },
+    {
+      "id": "PISO-OF04",
+      "tipo": "Piso",
+      "oficina": "OF04",
+      "area_base_m2": null,
+      "_nota": "area pendiente - este catalogo es solo para pisos 6,7,8,10,11,13,14: usar el area bruta PH de ESE plano (51.24 m2, NO los 46.00 m2 del plano de pisos 9/12, que es una variante distinta) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF04",
+      "tipo": "CieloRaso",
+      "oficina": "OF04",
+      "area_base_m2": null
+    },
+    {
+      "id": "M44",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.0,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.54m) - revisar si confianza baja"
+    },
+    {
+      "id": "M45",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 2.3,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.71m) - revisar si confianza baja"
+    },
+    {
+      "id": "M46",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.23,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.17m) - revisar si confianza baja"
+    },
+    {
+      "id": "M47",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.03,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.43m) - revisar si confianza baja"
+    },
+    {
+      "id": "M48",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.0,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+    },
+    {
+      "id": "M51",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": "OF06",
+      "altura_fija": null,
+      "longitud_m": 2.0,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.47m) - revisar si confianza baja"
+    },
+    {
+      "id": "M52",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 2.45,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.23m) - revisar si confianza baja"
+    },
+    {
+      "id": "M53",
+      "tipo": "Muro",
+      "oficina": "OF05",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.5,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+    },
+    {
+      "id": "V6",
+      "tipo": "Ventana",
+      "oficina": "OF05",
+      "muro_asociado": null
+    },
+    {
+      "id": "V7",
+      "tipo": "Ventana",
+      "oficina": "OF05",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV6",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF05",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV5",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF05",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL5",
+      "tipo": "Columna",
+      "oficina": "OF05"
+    },
+    {
+      "id": "R3",
+      "tipo": "Rejilla",
+      "oficina": "OF05",
+      "ubicacion": null
+    },
+    {
+      "id": "PISO-OF05",
+      "tipo": "Piso",
+      "oficina": "OF05",
+      "area_base_m2": null,
+      "_nota": "area pendiente - se puede usar el area bruta PH (59.40 m2 segun el PDF, igual en las dos variantes de plano) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF05",
+      "tipo": "CieloRaso",
+      "oficina": "OF05",
+      "area_base_m2": null
+    },
+    {
+      "id": "M54",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": "PASILLO",
+      "altura_fija": null,
+      "longitud_m": 2.08,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.48m) - revisar si confianza baja"
+    },
+    {
+      "id": "M55",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.58,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.18m) - revisar si confianza baja"
+    },
+    {
+      "id": "M56",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": "BUITRON 2",
+      "altura_fija": null,
+      "longitud_m": 0.3,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.86m) - revisar si confianza baja"
+    },
+    {
+      "id": "M57",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": 0.8,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.86m) - revisar si confianza baja"
+    },
+    {
+      "id": "M58",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.9,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.27m) - revisar si confianza baja"
+    },
+    {
+      "id": "M59",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": "PUNTO FIJO",
+      "altura_fija": null,
+      "longitud_m": 1.87,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.76m) - revisar si confianza baja"
+    },
+    {
+      "id": "M60",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.72,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.64m) - revisar si confianza baja"
+    },
+    {
+      "id": "M61",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 2.3,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.09m) - revisar si confianza baja"
+    },
+    {
+      "id": "M62",
+      "tipo": "Muro",
+      "oficina": "OF06",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.64,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.42m) - revisar si confianza baja"
+    },
+    {
+      "id": "V8",
+      "tipo": "Ventana",
+      "oficina": "OF06",
+      "muro_asociado": null
+    },
+    {
+      "id": "V9",
+      "tipo": "Ventana",
+      "oficina": "OF06",
+      "muro_asociado": null
+    },
+    {
+      "id": "AV7",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "OF06",
+      "muro_asociado": null
+    },
+    {
+      "id": "MV6",
+      "tipo": "MuroVentanaBaño",
+      "oficina": "OF06",
+      "muro_asociado": null
+    },
+    {
+      "id": "COL6",
+      "tipo": "Columna",
+      "oficina": "OF06"
+    },
+    {
+      "id": "COL7",
+      "tipo": "Columna",
+      "oficina": "OF06"
+    },
+    {
+      "id": "MES6",
+      "tipo": "Mesón",
+      "oficina": "OF06",
+      "profundidad_fija": null
+    },
+    {
+      "id": "R4",
+      "tipo": "Rejilla",
+      "oficina": "OF06",
+      "ubicacion": null
+    },
+    {
+      "id": "PISO-OF06",
+      "tipo": "Piso",
+      "oficina": "OF06",
+      "area_base_m2": null,
+      "_nota": "area pendiente - se puede usar el area bruta PH (69.20 m2 segun el PDF, igual en las dos variantes de plano) mientras se define la neta"
+    },
+    {
+      "id": "CR-OF06",
+      "tipo": "CieloRaso",
+      "oficina": "OF06",
+      "area_base_m2": null
+    },
+    {
+      "id": "M13",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.6,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.20m) - revisar si confianza baja"
+    },
+    {
+      "id": "M14",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.38,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.28m) - revisar si confianza baja"
+    },
+    {
+      "id": "M63",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "BUITRON 1",
+      "altura_fija": null,
+      "longitud_m": 0.5,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza baja (dist=1.45m) - revisar si confianza baja"
+    },
+    {
+      "id": "M65",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": 0.34,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.89m) - revisar si confianza baja"
+    },
+    {
+      "id": "M68",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": 2.0,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.65m) - revisar si confianza baja"
+    },
+    {
+      "id": "M69",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "altura_fija": null,
+      "longitud_m": 0.4,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.42m) - revisar si confianza baja"
+    },
+    {
+      "id": "M74",
+      "tipo": "Muro",
+      "oficina": "PASILLO",
+      "secundaria": "PUNTO FIJO",
+      "altura_fija": null,
+      "longitud_m": 2.7,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.44m) - revisar si confianza baja"
+    },
+    {
+      "id": "JAR1",
+      "tipo": "Jardinera",
+      "oficina": "PASILLO",
+      "altura_fija": null
+    },
+    {
+      "id": "JAR2",
+      "tipo": "Jardinera",
+      "oficina": "PASILLO",
+      "altura_fija": null
+    },
+    {
+      "id": "COL8",
+      "tipo": "Columna",
+      "oficina": "PASILLO"
+    },
+    {
+      "id": "COL9",
+      "tipo": "Columna",
+      "oficina": "PASILLO"
+    },
+    {
+      "id": "PISO-PASILLO",
+      "tipo": "Piso",
+      "oficina": "PASILLO",
+      "area_base_m2": null,
+      "_nota": "area pendiente de definir con el ingeniero"
+    },
+    {
+      "id": "CR-PASILLO",
+      "tipo": "CieloRaso",
+      "oficina": "PASILLO",
+      "area_base_m2": null
+    },
+    {
+      "id": "M66",
+      "tipo": "Muro",
+      "oficina": "FOSO ASCENSOR",
+      "secundaria": "BUITRON 1",
+      "altura_fija": null,
+      "longitud_m": 0.9,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.16m) - revisar si confianza baja"
+    },
+    {
+      "id": "M67",
+      "tipo": "Muro",
+      "oficina": "FOSO ASCENSOR",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 0.9,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.39m) - revisar si confianza baja"
+    },
+    {
+      "id": "M70",
+      "tipo": "Muro",
+      "oficina": "FOSO ASCENSOR",
+      "secundaria": "PUNTO FIJO",
+      "altura_fija": null,
+      "longitud_m": 0.8,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza alta (dist=0.14m) - revisar si confianza baja"
+    },
+    {
+      "id": "PISO-FOSOASCENSOR",
+      "tipo": "Piso",
+      "oficina": "FOSO ASCENSOR",
+      "area_base_m2": null,
+      "_nota": "area pendiente de definir con el ingeniero"
+    },
+    {
+      "id": "CR-FOSOASCENSOR",
+      "tipo": "CieloRaso",
+      "oficina": "FOSO ASCENSOR",
+      "area_base_m2": null
+    },
+    {
+      "id": "M71",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": "BUITRON 3",
+      "altura_fija": null,
+      "longitud_m": 1.05,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.72m) - revisar si confianza baja"
+    },
+    {
+      "id": "M72",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": null,
+      "altura_fija": null,
+      "longitud_m": 1.5,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.84m) - revisar si confianza baja"
+    },
+    {
+      "id": "M73",
+      "tipo": "Muro",
+      "oficina": "PUNTO FIJO",
+      "secundaria": "BUITRON 3",
+      "altura_fija": null,
+      "longitud_m": 1.5,
+      "espesor_m": null,
+      "_nota": "cruce automatico rotulado/DXF cotas 2017 (bajos) via transformacion de coordenadas; confianza media (dist=0.74m) - revisar si confianza baja"
+    },
+    {
+      "id": "AV8",
+      "tipo": "Antepecho+Ventana",
+      "oficina": "PUNTO FIJO",
+      "muro_asociado": null
+    },
+    {
+      "id": "PISO-PUNTOFIJO",
+      "tipo": "Piso",
+      "oficina": "PUNTO FIJO",
+      "area_base_m2": null,
+      "_nota": "area pendiente de definir con el ingeniero"
+    },
+    {
+      "id": "CR-PUNTOFIJO",
+      "tipo": "CieloRaso",
+      "oficina": "PUNTO FIJO",
+      "area_base_m2": null
+    },
+    {
+      "id": "BT1",
+      "tipo": "Buitron",
+      "oficina": "PASILLO",
+      "secundaria": "FOSO ASCENSOR",
+      "tipo_buitron": null
+    },
+    {
+      "id": "BT2",
+      "tipo": "Buitron",
+      "oficina": "OF06",
+      "secundaria": null,
+      "tipo_buitron": null
+    },
+    {
+      "id": "BT3",
+      "tipo": "Buitron",
+      "oficina": "PUNTO FIJO",
+      "secundaria": null,
+      "tipo_buitron": null
+    }
   ]
 }
